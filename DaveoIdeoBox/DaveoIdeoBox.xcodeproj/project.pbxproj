@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		24244E581BD65CD600F781DF /* DaveoIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E571BD65CD600F781DF /* DaveoIdea.swift */; settings = {ASSET_TAGS = (); }; };
+		24244E5D1BD66BD000F781DF /* EntriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2436BA8E1BD639190030DE13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BA8D1BD639190030DE13 /* AppDelegate.swift */; };
-		2436BA901BD639190030DE13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BA8F1BD639190030DE13 /* ViewController.swift */; };
 		2436BA931BD639190030DE13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2436BA911BD639190030DE13 /* Main.storyboard */; };
 		2436BA961BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2436BA941BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld */; };
 		2436BA981BD639190030DE13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2436BA971BD639190030DE13 /* Assets.xcassets */; };
@@ -37,9 +37,9 @@
 
 /* Begin PBXFileReference section */
 		24244E571BD65CD600F781DF /* DaveoIdea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaveoIdea.swift; sourceTree = "<group>"; };
+		24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesCollectionViewController.swift; sourceTree = "<group>"; };
 		2436BA8A1BD639190030DE13 /* DaveoIdeoBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeoBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2436BA8D1BD639190030DE13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2436BA8F1BD639190030DE13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2436BA921BD639190030DE13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2436BA951BD639190030DE13 /* DaveoIdeoBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DaveoIdeoBox.xcdatamodel; sourceTree = "<group>"; };
 		2436BA971BD639190030DE13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +86,28 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		24244E591BD66B8400F781DF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		24244E5A1BD66B9500F781DF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		24244E5B1BD66B9B00F781DF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		2436BA811BD639190030DE13 = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +131,11 @@
 		2436BA8C1BD639190030DE13 /* DaveoIdeoBox */ = {
 			isa = PBXGroup;
 			children = (
+				24244E5B1BD66B9B00F781DF /* Managers */,
+				24244E5A1BD66B9500F781DF /* Helpers */,
+				24244E591BD66B8400F781DF /* ViewControllers */,
 				24244E561BD65C9500F781DF /* Models */,
 				2436BA8D1BD639190030DE13 /* AppDelegate.swift */,
-				2436BA8F1BD639190030DE13 /* ViewController.swift */,
 				2436BA911BD639190030DE13 /* Main.storyboard */,
 				2436BA971BD639190030DE13 /* Assets.xcassets */,
 				2436BA991BD639190030DE13 /* LaunchScreen.storyboard */,
@@ -271,8 +295,8 @@
 			files = (
 				24244E581BD65CD600F781DF /* DaveoIdea.swift in Sources */,
 				2436BA961BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld in Sources */,
-				2436BA901BD639190030DE13 /* ViewController.swift in Sources */,
 				2436BA8E1BD639190030DE13 /* AppDelegate.swift in Sources */,
+				24244E5D1BD66BD000F781DF /* EntriesCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
