@@ -8,37 +8,40 @@
 
 import UIKit
 
-private let reuseIdentifier = "IdeaCell"
+private let reuseIdentifier = "EntryCell"
 private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
 
 class EntriesCollectionViewController: UICollectionViewController {
     
+    @IBOutlet var entriesCollectionView: UICollectionView!
+    
     private var entries = [Entry]()
     
-    func photoForIndexPath(indexPath: NSIndexPath) -> Entry {
+    func entryForIndexPath(indexPath: NSIndexPath) -> Entry {
+        // var section = indexPath.section;
+        // var row = indexPath.row;
         return entries[indexPath.row]
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
-        
-        // Fill test entries
-        for var index = 0; index < 3; ++index {
-            let item = Entry()
-            item.content = "Entry content"
-            item.author = "Author"
-        
-            entries.append(item)
-        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        // Fill test entries
+        for var index = 0; index < 9; ++index {
+            let item = Entry()
+            item.content = "Entry content"
+            item.author = "Author"
+            
+            entries.insert(item, atIndex: 0)
+            entries.append(item)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,11 +54,20 @@ class EntriesCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showEntryDetail" {
+            
+            let indexPath = entriesCollectionView.indexPathForCell(sender as! UICollectionViewCell)
+            let vc = segue.destinationViewController as! EntryViewController
+            let entry = entryForIndexPath(indexPath!)
+            vc.entry = entry
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -64,20 +76,23 @@ class EntriesCollectionViewController: UICollectionViewController {
         return 1
     }
 
-
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return entries.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EntryCollectionViewCell
     
         // Configure the cell
-    
+        let entry = entryForIndexPath(indexPath)
+       // cell.backgroundColor = UIColor.redColor()
+        cell.authorLabel.text = entry.author
+        cell.contentLabel.text = entry.content
+        cell.creationDateLabel.text = entry.creationDate.description
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -108,5 +123,21 @@ class EntriesCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            
+            //let entry = entryForIndexPath(indexPath)
+            //print(entry)
+            return CGSize(width: 250, height: 90)
+    }
+    
+    //3
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return sectionInsets
+    }
 
 }
