@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24244E581BD65CD600F781DF /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E571BD65CD600F781DF /* Entry.swift */; settings = {ASSET_TAGS = (); }; };
-		24244E5D1BD66BD000F781DF /* EntriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		24244E581BD65CD600F781DF /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E571BD65CD600F781DF /* Entry.swift */; };
+		24244E5D1BD66BD000F781DF /* EntriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */; };
 		2436BA8E1BD639190030DE13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BA8D1BD639190030DE13 /* AppDelegate.swift */; };
 		2436BA931BD639190030DE13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2436BA911BD639190030DE13 /* Main.storyboard */; };
 		2436BA961BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2436BA941BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld */; };
@@ -16,8 +16,11 @@
 		2436BA9B1BD639190030DE13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2436BA991BD639190030DE13 /* LaunchScreen.storyboard */; };
 		2436BAA61BD639190030DE13 /* DaveoIdeoBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BAA51BD639190030DE13 /* DaveoIdeoBoxTests.swift */; };
 		2436BAB11BD639190030DE13 /* DaveoIdeoBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BAB01BD639190030DE13 /* DaveoIdeoBoxUITests.swift */; };
-		24BD7FA81BD789AC006D5C05 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD7FA71BD789AC006D5C05 /* EntryViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		24FCBA991BD69301009D3521 /* EntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FCBA981BD69301009D3521 /* EntryCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		24BD7FA81BD789AC006D5C05 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD7FA71BD789AC006D5C05 /* EntryViewController.swift */; };
+		24D7D4C51BE8CDF900BA0532 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D7D4C41BE8CDF900BA0532 /* RoundedButton.swift */; };
+		24D7D4C71BE8EF3100BA0532 /* EntryTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D7D4C61BE8EF3100BA0532 /* EntryTileView.swift */; };
+		24FCBA991BD69301009D3521 /* EntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FCBA981BD69301009D3521 /* EntryCollectionViewCell.swift */; };
+		FA0AB38EB820126CAE95064F /* Pods_DaveoIdeoBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4703FA9A72E37EB4B3D476E /* Pods_DaveoIdeoBox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		078BF35AD5D856A806A14689 /* Pods-DaveoIdeoBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaveoIdeoBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaveoIdeoBox/Pods-DaveoIdeoBox.debug.xcconfig"; sourceTree = "<group>"; };
 		24244E571BD65CD600F781DF /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesCollectionViewController.swift; sourceTree = "<group>"; };
 		2436BA8A1BD639190030DE13 /* DaveoIdeoBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeoBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +58,11 @@
 		2436BAB01BD639190030DE13 /* DaveoIdeoBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaveoIdeoBoxUITests.swift; sourceTree = "<group>"; };
 		2436BAB21BD639190030DE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24BD7FA71BD789AC006D5C05 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		24D7D4C41BE8CDF900BA0532 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		24D7D4C61BE8EF3100BA0532 /* EntryTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTileView.swift; sourceTree = "<group>"; };
 		24FCBA981BD69301009D3521 /* EntryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D4703FA9A72E37EB4B3D476E /* Pods_DaveoIdeoBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaveoIdeoBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D65136BA2BBF02DF865382BF /* Pods-DaveoIdeoBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaveoIdeoBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaveoIdeoBox/Pods-DaveoIdeoBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0AB38EB820126CAE95064F /* Pods_DaveoIdeoBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,11 +116,13 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		24244E5B1BD66B9B00F781DF /* Managers */ = {
+		24244E5B1BD66B9B00F781DF /* UI components */ = {
 			isa = PBXGroup;
 			children = (
+				24D7D4C61BE8EF3100BA0532 /* EntryTileView.swift */,
+				24D7D4C41BE8CDF900BA0532 /* RoundedButton.swift */,
 			);
-			name = Managers;
+			name = "UI components";
 			sourceTree = "<group>";
 		};
 		2436BA811BD639190030DE13 = {
@@ -121,6 +132,8 @@
 				2436BAA41BD639190030DE13 /* DaveoIdeoBoxTests */,
 				2436BAAF1BD639190030DE13 /* DaveoIdeoBoxUITests */,
 				2436BA8B1BD639190030DE13 /* Products */,
+				7C743951CD8557B54559581A /* Pods */,
+				AB1CAE8E485600A985B48701 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,7 +150,7 @@
 		2436BA8C1BD639190030DE13 /* DaveoIdeoBox */ = {
 			isa = PBXGroup;
 			children = (
-				24244E5B1BD66B9B00F781DF /* Managers */,
+				24244E5B1BD66B9B00F781DF /* UI components */,
 				24244E5A1BD66B9500F781DF /* Helpers */,
 				24244E591BD66B8400F781DF /* ViewControllers */,
 				24244E561BD65C9500F781DF /* Models */,
@@ -169,6 +182,23 @@
 			path = DaveoIdeoBoxUITests;
 			sourceTree = "<group>";
 		};
+		7C743951CD8557B54559581A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				078BF35AD5D856A806A14689 /* Pods-DaveoIdeoBox.debug.xcconfig */,
+				D65136BA2BBF02DF865382BF /* Pods-DaveoIdeoBox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AB1CAE8E485600A985B48701 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4703FA9A72E37EB4B3D476E /* Pods_DaveoIdeoBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2436BAB51BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeoBox" */;
 			buildPhases = (
+				E3941C6D2AB7D80537D4A4E8 /* Check Pods Manifest.lock */,
 				2436BA861BD639190030DE13 /* Sources */,
 				2436BA871BD639190030DE13 /* Frameworks */,
 				2436BA881BD639190030DE13 /* Resources */,
+				B86461943C272BBFBA83C81F /* Embed Pods Frameworks */,
+				1D0137D81D6703412D5C6FFE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,15 +327,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D0137D81D6703412D5C6FFE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DaveoIdeoBox/Pods-DaveoIdeoBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B86461943C272BBFBA83C81F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DaveoIdeoBox/Pods-DaveoIdeoBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3941C6D2AB7D80537D4A4E8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2436BA861BD639190030DE13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				24244E581BD65CD600F781DF /* Entry.swift in Sources */,
+				24D7D4C71BE8EF3100BA0532 /* EntryTileView.swift in Sources */,
 				2436BA961BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld in Sources */,
 				2436BA8E1BD639190030DE13 /* AppDelegate.swift in Sources */,
 				24FCBA991BD69301009D3521 /* EntryCollectionViewCell.swift in Sources */,
+				24D7D4C51BE8CDF900BA0532 /* RoundedButton.swift in Sources */,
 				24244E5D1BD66BD000F781DF /* EntriesCollectionViewController.swift in Sources */,
 				24BD7FA81BD789AC006D5C05 /* EntryViewController.swift in Sources */,
 			);
@@ -444,6 +527,7 @@
 		};
 		2436BAB61BD639190030DE13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078BF35AD5D856A806A14689 /* Pods-DaveoIdeoBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DaveoIdeoBox/Info.plist;
@@ -455,6 +539,7 @@
 		};
 		2436BAB71BD639190030DE13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D65136BA2BBF02DF865382BF /* Pods-DaveoIdeoBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DaveoIdeoBox/Info.plist;
