@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import Foundation
 
 private let reuseIdentifier = "EntryCell"
-private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+private let sectionInsets = UIEdgeInsets(top: -40.0, left: 10.0, bottom: 10.0, right: 10.0)
 
 class EntriesCollectionViewController: UICollectionViewController {
-    
+    // GUI elements
     @IBOutlet var entriesCollectionView: UICollectionView!
     
-    private var entries = [Entry]()
+    // Attributes
+    private var isViewAppearedOnce = false
+    private var entries = [Idea]()
     
-    func entryForIndexPath(indexPath: NSIndexPath) -> Entry {
+    func entryForIndexPath(indexPath: NSIndexPath) -> Idea {
         // var section = indexPath.section;
         // var row = indexPath.row;
         return entries[indexPath.row]
@@ -27,33 +30,47 @@ class EntriesCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = true
 
         // Register cell classes
         //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
         // Fill test entries
-        for var index = 0; index < 9; ++index {
-            let item = Entry()
-            item.content = "Entry content"
-            item.author = "Author"
+        let authors = ["cyril", "steeve", "malicia", "mathieu", "lucile", "antoine", "christophe", "mustapha", "riad", "elias", "guillaume", "alice", "helene", "arnaud", "sinthuyan", "gilles", "charly", "saadna"]
+        
+        for var index = 0; index < 32; ++index {
+            let item = Idea()
+            item.content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             
-            entries.insert(item, atIndex: 0)
+            // get ramdom author
+            let arrayIndex = arc4random_uniform(UInt32(authors.count))
+            let randomAuthor = authors[Int(arrayIndex)]
+            
+            item.author = randomAuthor
+            item.creationDate = NSDate()
+            item.thumbUpCount = Int(0 + arc4random_uniform(UInt32(15)))
+            
+            //.insert(item, atIndex: 0)
             entries.append(item)
         }
+        
+        // Let's sort all entries by thumb up count
+        entries = entries.sort { $0.thumbUpCount > $1.thumbUpCount }
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        print("didReceiveMemoryWarning")
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        if self.isViewAppearedOnce {
+            self.entriesCollectionView.reloadData()
+            print("reloadData")
+        }
+        
+        // Yes, viewDidLoad was called once
+        self.isViewAppearedOnce = true
     }
 
     /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -61,10 +78,11 @@ class EntriesCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "showEntryDetail" {
-            
             let indexPath = entriesCollectionView.indexPathForCell(sender as! UICollectionViewCell)
             let vc = segue.destinationViewController as! EntryViewController
             let entry = entryForIndexPath(indexPath!)
+            
+            //let cell = sender as! EntryCollectionViewCell
             vc.entry = entry
         }
     }
@@ -86,10 +104,15 @@ class EntriesCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         let entry = entryForIndexPath(indexPath)
-       // cell.backgroundColor = UIColor.redColor()
-        cell.authorLabel.text = entry.author
-        cell.contentLabel.text = entry.content
-        cell.creationDateLabel.text = entry.creationDate.description
+        
+        // cell.backgroundColor = UIColor.redColor()
+        cell.entry = entry
+//        cell.authorLabel?.text = entry.author.capitalizedString
+//        cell.contentLabel?.text = entry.content
+//        cell.thumbUpCountButton.setTitle("\(entry.thumbUpCount!)", forState: .Normal)
+        
+        
+        //cell.ideaThemedImageView?.contentMode = .ScaleAspectFill
         return cell
     }
     
@@ -124,13 +147,22 @@ class EntriesCollectionViewController: UICollectionViewController {
     }
     */
     
-    func collectionView(collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            
-            //let entry = entryForIndexPath(indexPath)
-            //print(entry)
-            return CGSize(width: 250, height: 90)
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let defaultSize: CGSize = (collectionViewLayout as! UICollectionViewFlowLayout).itemSize
+        
+        //let screenWidth = view.frame.width
+        //let itemsOnRows:Int = (screenWidth / defaultSize.width)
+        
+        switch indexPath.item {
+        case 0:
+            return CGSize(width: (defaultSize.width * 3) + 20.0, height: defaultSize.height)
+        case 1:
+            return CGSize(width: (defaultSize.width * 2) + 10.0, height: defaultSize.height)
+        default:
+            break
+        }
+        return defaultSize
     }
     
     //3

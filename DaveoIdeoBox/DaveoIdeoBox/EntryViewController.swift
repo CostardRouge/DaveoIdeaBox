@@ -9,43 +9,66 @@
 import UIKit
 
 class EntryViewController: UIViewController {
-    
+    // GUI elements
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var creationDateLabel: UILabel!
+    @IBOutlet weak var thumbUpCount: UILabel!
+    @IBOutlet weak var ideaThemedImageView: UIImageView!
     
-    var entry: Entry? {
-        didSet {
-            
-        }
-    }
-
+    // Attributes
+    var entry: Idea?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let loadedEntry = entry {
-            authorLabel.text = loadedEntry.author
-            contentLabel.text = loadedEntry.content  as String
-            creationDateLabel.text = loadedEntry.creationDate.description
-        }
-       
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupGUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupGUI() {
+        if let loadedEntry = entry {
+            contentLabel?.text = loadedEntry.content
+            authorLabel?.text = makeAuthorLabelText(loadedEntry.author)
+            creationDateLabel.text = makeCreationDateLabelText(loadedEntry.creationDate)
+            thumbUpCount.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
+            
+            let imageNamed = "\(Int(1 + arc4random_uniform(UInt32(8))))"
+            ideaThemedImageView?.image = UIImage(named: imageNamed)
+        }
     }
-    */
-
+    
+    @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
+        let tapAlert = UIAlertController(title: "Swiped", message: "SwipeLeft", preferredStyle: UIAlertControllerStyle.Alert)
+        tapAlert.addAction(UIAlertAction(title: "OK", style: .Destructive, handler: nil))
+        self.presentViewController(tapAlert, animated: true, completion: nil)
+    }
+    
+    @IBAction func seeOtherIdeasTouchUpInside(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func thumbUpTouchUpInside(sender: UIButton) {
+        // Model mechanism
+        entry?.thumbUpCount = (entry?.thumbUpCount)! + 1
+        
+        // GUI mechanism
+        setupGUI()
+    }
+    
+    // GUI helper methods
+    func makeAuthorLabelText(authorName:String) -> String {
+        return String(format: "%@", authorName.uppercaseString)
+    }
+    
+    func makeCreationDateLabelText(creationDate:NSDate) -> String {
+        return String(format: "PUBLIÉ LE: %@", creationDate.description)
+    }
+    
+    func makeThumbUpCountLabelText(possibleThumbUpCount:Int?) -> String {
+        if let thumbUpCount = possibleThumbUpCount {
+            return String(format: "%dx vote%@", thumbUpCount, (thumbUpCount > 1 ? "s" : ""))
+        }
+        return String(format: "Pas de votes")
+    }
 }

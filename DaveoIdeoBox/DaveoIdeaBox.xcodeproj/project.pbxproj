@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24244E581BD65CD600F781DF /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E571BD65CD600F781DF /* Entry.swift */; };
-		24244E5D1BD66BD000F781DF /* EntriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */; };
+		24244E581BD65CD600F781DF /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E571BD65CD600F781DF /* Idea.swift */; };
+		24244E5D1BD66BD000F781DF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24244E5C1BD66BD000F781DF /* CollectionViewController.swift */; };
 		2436BA8E1BD639190030DE13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BA8D1BD639190030DE13 /* AppDelegate.swift */; };
 		2436BA931BD639190030DE13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2436BA911BD639190030DE13 /* Main.storyboard */; };
 		2436BA961BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2436BA941BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld */; };
-		2436BA981BD639190030DE13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2436BA971BD639190030DE13 /* Assets.xcassets */; };
-		2436BA9B1BD639190030DE13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2436BA991BD639190030DE13 /* LaunchScreen.storyboard */; };
 		2436BAA61BD639190030DE13 /* DaveoIdeoBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BAA51BD639190030DE13 /* DaveoIdeoBoxTests.swift */; };
 		2436BAB11BD639190030DE13 /* DaveoIdeoBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436BAB01BD639190030DE13 /* DaveoIdeoBoxUITests.swift */; };
 		24BD7FA81BD789AC006D5C05 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD7FA71BD789AC006D5C05 /* EntryViewController.swift */; };
+		24C990D11BEA626E0023A6BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C990D01BEA626E0023A6BB /* Assets.xcassets */; };
+		24C990D31BEC60000023A6BB /* EmbbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C990D21BEC60000023A6BB /* EmbbedViewController.swift */; };
+		24C990D51BEC60C40023A6BB /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C990D41BEC60C40023A6BB /* ModalViewController.swift */; };
+		24C990D71BEC792B0023A6BB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C990D61BEC792B0023A6BB /* LaunchViewController.swift */; };
+		24C990D91BECAD600023A6BB /* IdeaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C990D81BECAD600023A6BB /* IdeaManager.swift */; };
+		24C990DB1BECE87A0023A6BB /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C990DA1BECE87A0023A6BB /* NavigationViewController.swift */; };
 		24D7D4C51BE8CDF900BA0532 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D7D4C41BE8CDF900BA0532 /* RoundedButton.swift */; };
 		24D7D4C71BE8EF3100BA0532 /* EntryTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D7D4C61BE8EF3100BA0532 /* EntryTileView.swift */; };
-		24FCBA991BD69301009D3521 /* EntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FCBA981BD69301009D3521 /* EntryCollectionViewCell.swift */; };
+		24FCBA991BD69301009D3521 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FCBA981BD69301009D3521 /* CollectionViewCell.swift */; };
 		FA0AB38EB820126CAE95064F /* Pods_DaveoIdeoBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4703FA9A72E37EB4B3D476E /* Pods_DaveoIdeoBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,25 +46,29 @@
 
 /* Begin PBXFileReference section */
 		078BF35AD5D856A806A14689 /* Pods-DaveoIdeoBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaveoIdeoBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaveoIdeoBox/Pods-DaveoIdeoBox.debug.xcconfig"; sourceTree = "<group>"; };
-		24244E571BD65CD600F781DF /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesCollectionViewController.swift; sourceTree = "<group>"; };
-		2436BA8A1BD639190030DE13 /* DaveoIdeoBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeoBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24244E571BD65CD600F781DF /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
+		24244E5C1BD66BD000F781DF /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		2436BA8A1BD639190030DE13 /* DaveoIdeaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2436BA8D1BD639190030DE13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2436BA921BD639190030DE13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2436BA951BD639190030DE13 /* DaveoIdeoBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DaveoIdeoBox.xcdatamodel; sourceTree = "<group>"; };
-		2436BA971BD639190030DE13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2436BA9A1BD639190030DE13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2436BA9C1BD639190030DE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2436BAA11BD639190030DE13 /* DaveoIdeoBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaveoIdeoBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2436BAA11BD639190030DE13 /* DaveoIdeaBox.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaveoIdeaBox.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2436BAA51BD639190030DE13 /* DaveoIdeoBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaveoIdeoBoxTests.swift; sourceTree = "<group>"; };
 		2436BAA71BD639190030DE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2436BAAC1BD639190030DE13 /* DaveoIdeoBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaveoIdeoBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2436BAAC1BD639190030DE13 /* DaveoIdeaBox.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaveoIdeaBox.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2436BAB01BD639190030DE13 /* DaveoIdeoBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaveoIdeoBoxUITests.swift; sourceTree = "<group>"; };
 		2436BAB21BD639190030DE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24BD7FA71BD789AC006D5C05 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		24C990D01BEA626E0023A6BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24C990D21BEC60000023A6BB /* EmbbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbbedViewController.swift; sourceTree = "<group>"; };
+		24C990D41BEC60C40023A6BB /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		24C990D61BEC792B0023A6BB /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		24C990D81BECAD600023A6BB /* IdeaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaManager.swift; sourceTree = "<group>"; };
+		24C990DA1BECE87A0023A6BB /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		24D7D4C41BE8CDF900BA0532 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		24D7D4C61BE8EF3100BA0532 /* EntryTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTileView.swift; sourceTree = "<group>"; };
-		24FCBA981BD69301009D3521 /* EntryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCollectionViewCell.swift; sourceTree = "<group>"; };
+		24FCBA981BD69301009D3521 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D4703FA9A72E37EB4B3D476E /* Pods_DaveoIdeoBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaveoIdeoBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65136BA2BBF02DF865382BF /* Pods-DaveoIdeoBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaveoIdeoBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaveoIdeoBox/Pods-DaveoIdeoBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +102,7 @@
 		24244E561BD65C9500F781DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				24244E571BD65CD600F781DF /* Entry.swift */,
+				24244E571BD65CD600F781DF /* Idea.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -102,9 +110,13 @@
 		24244E591BD66B8400F781DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				24FCBA981BD69301009D3521 /* EntryCollectionViewCell.swift */,
-				24244E5C1BD66BD000F781DF /* EntriesCollectionViewController.swift */,
+				24FCBA981BD69301009D3521 /* CollectionViewCell.swift */,
+				24244E5C1BD66BD000F781DF /* CollectionViewController.swift */,
 				24BD7FA71BD789AC006D5C05 /* EntryViewController.swift */,
+				24C990D21BEC60000023A6BB /* EmbbedViewController.swift */,
+				24C990D41BEC60C40023A6BB /* ModalViewController.swift */,
+				24C990DA1BECE87A0023A6BB /* NavigationViewController.swift */,
+				24C990D61BEC792B0023A6BB /* LaunchViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -112,6 +124,7 @@
 		24244E5A1BD66B9500F781DF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				24C990D81BECAD600023A6BB /* IdeaManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -128,7 +141,7 @@
 		2436BA811BD639190030DE13 = {
 			isa = PBXGroup;
 			children = (
-				2436BA8C1BD639190030DE13 /* DaveoIdeoBox */,
+				2436BA8C1BD639190030DE13 /* DaveoIdeaBox */,
 				2436BAA41BD639190030DE13 /* DaveoIdeoBoxTests */,
 				2436BAAF1BD639190030DE13 /* DaveoIdeoBoxUITests */,
 				2436BA8B1BD639190030DE13 /* Products */,
@@ -140,14 +153,14 @@
 		2436BA8B1BD639190030DE13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2436BA8A1BD639190030DE13 /* DaveoIdeoBox.app */,
-				2436BAA11BD639190030DE13 /* DaveoIdeoBoxTests.xctest */,
-				2436BAAC1BD639190030DE13 /* DaveoIdeoBoxUITests.xctest */,
+				2436BA8A1BD639190030DE13 /* DaveoIdeaBox.app */,
+				2436BAA11BD639190030DE13 /* DaveoIdeaBox.xctest */,
+				2436BAAC1BD639190030DE13 /* DaveoIdeaBox.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2436BA8C1BD639190030DE13 /* DaveoIdeoBox */ = {
+		2436BA8C1BD639190030DE13 /* DaveoIdeaBox */ = {
 			isa = PBXGroup;
 			children = (
 				24244E5B1BD66B9B00F781DF /* UI components */,
@@ -156,11 +169,11 @@
 				24244E561BD65C9500F781DF /* Models */,
 				2436BA8D1BD639190030DE13 /* AppDelegate.swift */,
 				2436BA911BD639190030DE13 /* Main.storyboard */,
-				2436BA971BD639190030DE13 /* Assets.xcassets */,
-				2436BA991BD639190030DE13 /* LaunchScreen.storyboard */,
+				24C990D01BEA626E0023A6BB /* Assets.xcassets */,
 				2436BA9C1BD639190030DE13 /* Info.plist */,
 				2436BA941BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld */,
 			);
+			name = DaveoIdeaBox;
 			path = DaveoIdeoBox;
 			sourceTree = "<group>";
 		};
@@ -202,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2436BA891BD639190030DE13 /* DaveoIdeoBox */ = {
+		2436BA891BD639190030DE13 /* DaveoIdeaBox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2436BAB51BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeoBox" */;
+			buildConfigurationList = 2436BAB51BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeaBox" */;
 			buildPhases = (
 				E3941C6D2AB7D80537D4A4E8 /* Check Pods Manifest.lock */,
 				2436BA861BD639190030DE13 /* Sources */,
@@ -217,14 +230,14 @@
 			);
 			dependencies = (
 			);
-			name = DaveoIdeoBox;
+			name = DaveoIdeaBox;
 			productName = DaveoIdeoBox;
-			productReference = 2436BA8A1BD639190030DE13 /* DaveoIdeoBox.app */;
+			productReference = 2436BA8A1BD639190030DE13 /* DaveoIdeaBox.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2436BAA01BD639190030DE13 /* DaveoIdeoBoxTests */ = {
+		2436BAA01BD639190030DE13 /* DaveoIdeaBoxTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2436BAB81BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeoBoxTests" */;
+			buildConfigurationList = 2436BAB81BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeaBoxTests" */;
 			buildPhases = (
 				2436BA9D1BD639190030DE13 /* Sources */,
 				2436BA9E1BD639190030DE13 /* Frameworks */,
@@ -235,14 +248,14 @@
 			dependencies = (
 				2436BAA31BD639190030DE13 /* PBXTargetDependency */,
 			);
-			name = DaveoIdeoBoxTests;
+			name = DaveoIdeaBoxTests;
 			productName = DaveoIdeoBoxTests;
-			productReference = 2436BAA11BD639190030DE13 /* DaveoIdeoBoxTests.xctest */;
+			productReference = 2436BAA11BD639190030DE13 /* DaveoIdeaBox.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2436BAAB1BD639190030DE13 /* DaveoIdeoBoxUITests */ = {
+		2436BAAB1BD639190030DE13 /* DaveoIdeaBoxUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2436BABB1BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeoBoxUITests" */;
+			buildConfigurationList = 2436BABB1BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeaBoxUITests" */;
 			buildPhases = (
 				2436BAA81BD639190030DE13 /* Sources */,
 				2436BAA91BD639190030DE13 /* Frameworks */,
@@ -253,9 +266,9 @@
 			dependencies = (
 				2436BAAE1BD639190030DE13 /* PBXTargetDependency */,
 			);
-			name = DaveoIdeoBoxUITests;
+			name = DaveoIdeaBoxUITests;
 			productName = DaveoIdeoBoxUITests;
-			productReference = 2436BAAC1BD639190030DE13 /* DaveoIdeoBoxUITests.xctest */;
+			productReference = 2436BAAC1BD639190030DE13 /* DaveoIdeaBox.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -280,7 +293,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2436BA851BD639190030DE13 /* Build configuration list for PBXProject "DaveoIdeoBox" */;
+			buildConfigurationList = 2436BA851BD639190030DE13 /* Build configuration list for PBXProject "DaveoIdeaBox" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -293,9 +306,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2436BA891BD639190030DE13 /* DaveoIdeoBox */,
-				2436BAA01BD639190030DE13 /* DaveoIdeoBoxTests */,
-				2436BAAB1BD639190030DE13 /* DaveoIdeoBoxUITests */,
+				2436BA891BD639190030DE13 /* DaveoIdeaBox */,
+				2436BAA01BD639190030DE13 /* DaveoIdeaBoxTests */,
+				2436BAAB1BD639190030DE13 /* DaveoIdeaBoxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,8 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2436BA9B1BD639190030DE13 /* LaunchScreen.storyboard in Resources */,
-				2436BA981BD639190030DE13 /* Assets.xcassets in Resources */,
+				24C990D11BEA626E0023A6BB /* Assets.xcassets in Resources */,
 				2436BA931BD639190030DE13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,13 +392,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24244E581BD65CD600F781DF /* Entry.swift in Sources */,
+				24244E581BD65CD600F781DF /* Idea.swift in Sources */,
+				24C990DB1BECE87A0023A6BB /* NavigationViewController.swift in Sources */,
+				24C990D91BECAD600023A6BB /* IdeaManager.swift in Sources */,
+				24C990D31BEC60000023A6BB /* EmbbedViewController.swift in Sources */,
 				24D7D4C71BE8EF3100BA0532 /* EntryTileView.swift in Sources */,
 				2436BA961BD639190030DE13 /* DaveoIdeoBox.xcdatamodeld in Sources */,
 				2436BA8E1BD639190030DE13 /* AppDelegate.swift in Sources */,
-				24FCBA991BD69301009D3521 /* EntryCollectionViewCell.swift in Sources */,
+				24FCBA991BD69301009D3521 /* CollectionViewCell.swift in Sources */,
+				24C990D51BEC60C40023A6BB /* ModalViewController.swift in Sources */,
 				24D7D4C51BE8CDF900BA0532 /* RoundedButton.swift in Sources */,
-				24244E5D1BD66BD000F781DF /* EntriesCollectionViewController.swift in Sources */,
+				24C990D71BEC792B0023A6BB /* LaunchViewController.swift in Sources */,
+				24244E5D1BD66BD000F781DF /* CollectionViewController.swift in Sources */,
 				24BD7FA81BD789AC006D5C05 /* EntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,12 +429,12 @@
 /* Begin PBXTargetDependency section */
 		2436BAA31BD639190030DE13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2436BA891BD639190030DE13 /* DaveoIdeoBox */;
+			target = 2436BA891BD639190030DE13 /* DaveoIdeaBox */;
 			targetProxy = 2436BAA21BD639190030DE13 /* PBXContainerItemProxy */;
 		};
 		2436BAAE1BD639190030DE13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2436BA891BD639190030DE13 /* DaveoIdeoBox */;
+			target = 2436BA891BD639190030DE13 /* DaveoIdeaBox */;
 			targetProxy = 2436BAAD1BD639190030DE13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -429,14 +446,6 @@
 				2436BA921BD639190030DE13 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2436BA991BD639190030DE13 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2436BA9A1BD639190030DE13 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -533,7 +542,7 @@
 				INFOPLIST_FILE = DaveoIdeoBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DaveoIdeaBox;
 			};
 			name = Debug;
 		};
@@ -545,7 +554,7 @@
 				INFOPLIST_FILE = DaveoIdeoBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DaveoIdeaBox;
 			};
 			name = Release;
 		};
@@ -556,8 +565,8 @@
 				INFOPLIST_FILE = DaveoIdeoBoxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeoBoxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaveoIdeoBox.app/DaveoIdeoBox";
+				PRODUCT_NAME = DaveoIdeaBox;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaveoIdeaBox.app/DaveoIdeaBox";
 			};
 			name = Debug;
 		};
@@ -568,8 +577,8 @@
 				INFOPLIST_FILE = DaveoIdeoBoxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeoBoxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaveoIdeoBox.app/DaveoIdeoBox";
+				PRODUCT_NAME = DaveoIdeaBox;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaveoIdeaBox.app/DaveoIdeaBox";
 			};
 			name = Release;
 		};
@@ -579,7 +588,7 @@
 				INFOPLIST_FILE = DaveoIdeoBoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeoBoxUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DaveoIdeaBox;
 				TEST_TARGET_NAME = DaveoIdeoBox;
 				USES_XCTRUNNER = YES;
 			};
@@ -591,7 +600,7 @@
 				INFOPLIST_FILE = DaveoIdeoBoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeoBoxUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DaveoIdeaBox;
 				TEST_TARGET_NAME = DaveoIdeoBox;
 				USES_XCTRUNNER = YES;
 			};
@@ -600,7 +609,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2436BA851BD639190030DE13 /* Build configuration list for PBXProject "DaveoIdeoBox" */ = {
+		2436BA851BD639190030DE13 /* Build configuration list for PBXProject "DaveoIdeaBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2436BAB31BD639190030DE13 /* Debug */,
@@ -609,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2436BAB51BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeoBox" */ = {
+		2436BAB51BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeaBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2436BAB61BD639190030DE13 /* Debug */,
@@ -618,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2436BAB81BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeoBoxTests" */ = {
+		2436BAB81BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeaBoxTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2436BAB91BD639190030DE13 /* Debug */,
@@ -627,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2436BABB1BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeoBoxUITests" */ = {
+		2436BABB1BD639190030DE13 /* Build configuration list for PBXNativeTarget "DaveoIdeaBoxUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2436BABC1BD639190030DE13 /* Debug */,

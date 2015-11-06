@@ -2,10 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RoundedButton.swift">
-   </FileRef>
-   <FileRef
-      location = "group:DaveoIdeoBox.xcodeproj">
+      location = "group:/Users/steeveisworking/GitHub/DaveoIdeaBox/DaveoIdeoBox/DaveoIdeaBox.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
