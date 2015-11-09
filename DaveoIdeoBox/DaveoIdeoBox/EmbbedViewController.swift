@@ -15,6 +15,16 @@ class EmbbedViewController: UIViewController, UIViewControllerTransitioningDeleg
     @IBOutlet weak var contributeView: UIView!
     
     let transition = BubbleTransition()
+    
+    var trueContributeViewCenter: CGPoint {
+        get {
+            let addIdeaViewCenter = addIdeaView.center
+            let contributeViewCenter = contributeView.center
+            let x = contributeViewCenter.x
+            let y = contributeViewCenter.y + addIdeaViewCenter.y
+            return CGPoint(x: x, y: y)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +48,15 @@ class EmbbedViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .Present
-        transition.startingPoint = contributeView.center
-        transition.bubbleColor = contributeView.backgroundColor!
+        transition.startingPoint = trueContributeViewCenter
+        transition.bubbleColor = addIdeaView.backgroundColor!
         return transition
     }
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .Dismiss
-        transition.startingPoint = contributeView.center
-        transition.bubbleColor = contributeView.backgroundColor!
+        transition.startingPoint = trueContributeViewCenter
+        transition.bubbleColor = addIdeaView.backgroundColor!
         return transition
     }
 
