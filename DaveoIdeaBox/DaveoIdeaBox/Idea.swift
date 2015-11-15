@@ -11,7 +11,7 @@ import UIKit
 class Idea {
     // Enums
     struct Theme {
-        static let Undefined = (id: 0, printableName: "N/A", preferedColor: UIColor.redColor())
+        static let Undefined = (printableName: "N/A", preferedColor: UIColor.redColor())
         static let Technology = (printableName: "Technologie", preferedColor: UIColor.redColor())
         static let Innovation = (printableName: "Innovation", preferedColor: UIColor.redColor())
         static let HumanRessource = (printableName: "Ressources humaines", preferedColor: UIColor.redColor())

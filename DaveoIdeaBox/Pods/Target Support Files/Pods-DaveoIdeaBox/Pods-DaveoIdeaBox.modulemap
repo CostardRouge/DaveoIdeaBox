@@ -1,6 +1,0 @@
-framework module Pods_DaveoIdeaBox {
-  umbrella header "Pods-DaveoIdeaBox-umbrella.h"
-
-  export *
-  module * { export * }
-}

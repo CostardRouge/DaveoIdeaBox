@@ -18,12 +18,10 @@ class EmbbedViewController: UIViewController {
     }
     
     @IBAction func addIdeaButtonTouchUpInside(sender: UIButton) {
-        print("addIdeaButtonTouchUpInside")
         //performSegueWithIdentifier("addIdeaView", sender: nil)
     }
     
     @IBAction func handleSingleTap(recognizer: UITapGestureRecognizer) {
-        print("handleSingleTap")
         performSegueWithIdentifier("submitEntryView", sender: nil)
     }
 }

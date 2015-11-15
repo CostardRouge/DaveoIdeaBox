@@ -40,13 +40,13 @@ class EntryCollectionViewCell: UICollectionViewCell {
         if let loadedEntry = entry {
             contentLabel?.text = loadedEntry.content
             authorLabel?.text = loadedEntry.author.capitalizedString
-            if (loadedEntry.thumbUpCount! == 0)  {
-                thumbUpCountButton.hidden = true
-            }
-            else {
-                thumbUpCountButton.hidden = false
+//            if (loadedEntry.thumbUpCount! == 0)  {
+//                thumbUpCountButton.hidden = true
+//            }
+//            else {
+//                thumbUpCountButton.hidden = false
                 thumbUpCountButton.setTitle("\(loadedEntry.thumbUpCount!)", forState: .Normal)
-            }
+//            }
             
             let imageNamed = "\(Int(1 + arc4random_uniform(UInt32(8))))"
             ideaThemedImageView?.image = UIImage(named: imageNamed)
