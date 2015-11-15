@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7Ku-Ph-VtB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AzW-nr-4aM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUBLIÉ UN VENDREDI (21/03/2015), DANS L’APRÈS-MIDI À 14H01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4L5-xS-QEa">
@@ -493,7 +493,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1257" y="418.5"/>
+            <point key="canvasLocation" x="1703" y="472"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="Qqw-ep-2Wl">
@@ -519,7 +519,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvw-bs-DAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-944" y="387"/>
+            <point key="canvasLocation" x="-1195" y="436"/>
         </scene>
         <!--Embbed-->
         <scene sceneID="r32-q5-Ort">
@@ -647,14 +647,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-214.5" y="387"/>
+            <point key="canvasLocation" x="-476" y="436"/>
         </scene>
         <!--Entries-->
         <scene sceneID="Uin-zr-fLk">
             <objects>
                 <collectionViewController id="9yu-nJ-yg0" userLabel="Entries" customClass="EntriesCollectionViewController" customModule="DaveoIdeaBox" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" keyboardDismissMode="onDrag" dataMode="prototypes" id="kPv-BE-dRs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -772,9 +772,6 @@
                                                             <include reference="s6o-Ex-xsI"/>
                                                         </mask>
                                                     </variation>
-                                                    <connections>
-                                                        <segue destination="DX2-Ss-sQh" kind="show" id="wpc-fT-HU6"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -886,22 +883,23 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfg-dO-0os" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="419"/>
+            <point key="canvasLocation" x="984" y="472"/>
         </scene>
         <!--Add Entry View Controller-->
         <scene sceneID="daV-FH-3E3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EU0-Lq-VB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="DX2-Ss-sQh" customClass="AddEntryViewController" customModule="DaveoIdeaBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OFs-Si-kVb"/>
                         <viewControllerLayoutGuide type="bottom" id="FPs-av-lgK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vYn-Ct-bSx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Qxw-ps-TOe">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZfM-wL-RGQ" userLabel="Container">
                                         <rect key="frame" x="40" y="40" width="520" height="700"/>
@@ -1448,9 +1446,102 @@
                         <outlet property="nameTextField" destination="ZVb-GS-iqS" id="jjd-Ne-OO2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EU0-Lq-VB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="1166"/>
+            <point key="canvasLocation" x="1212" y="1916"/>
+        </scene>
+        <!--Submit Completed View Controller-->
+        <scene sceneID="6Xn-rd-zSz">
+            <objects>
+                <viewController id="NIz-Re-rxX" customClass="SubmitCompletedViewController" customModule="DaveoIdeaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KP4-hb-Uon"/>
+                        <viewControllerLayoutGuide type="bottom" id="jP8-hO-2GE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WaJ-bz-6Bp">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merci,  c'est sympa d'avoir participé !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpi-4B-Ze0">
+                                <rect key="frame" x="128" y="142" width="345" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="189-Sl-JpK">
+                                <rect key="frame" x="175" y="238" width="250" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QsP-eY-k4a"/>
+                                    <constraint firstAttribute="width" constant="250" id="aCO-TP-dnd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="RETOUR VUE PRINCIPAL">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="9yu-nJ-yg0" kind="show" identifier="goBack" id="q3m-nv-GAI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgY-c3-8SR">
+                                <rect key="frame" x="180" y="306" width="240" height="50"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Tql-E7-h5F"/>
+                                    <constraint firstAttribute="height" constant="50" id="Uxk-Z3-VeY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="VOIR L'IDÉE">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.90980392160000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="189-Sl-JpK" firstAttribute="top" secondItem="Cpi-4B-Ze0" secondAttribute="bottom" constant="30" id="1Lh-rp-e8D"/>
+                            <constraint firstItem="kgY-c3-8SR" firstAttribute="centerX" secondItem="189-Sl-JpK" secondAttribute="centerX" id="92W-Q3-7q8"/>
+                            <constraint firstItem="189-Sl-JpK" firstAttribute="centerX" secondItem="WaJ-bz-6Bp" secondAttribute="centerX" id="Buo-Ee-CYm"/>
+                            <constraint firstItem="kgY-c3-8SR" firstAttribute="centerY" secondItem="189-Sl-JpK" secondAttribute="centerY" id="Cz3-Tw-Hq6"/>
+                            <constraint firstItem="kgY-c3-8SR" firstAttribute="top" secondItem="189-Sl-JpK" secondAttribute="bottom" constant="8" id="ILr-jL-wyo"/>
+                            <constraint firstItem="kgY-c3-8SR" firstAttribute="centerX" secondItem="189-Sl-JpK" secondAttribute="centerX" id="Idb-5i-DXw"/>
+                            <constraint firstItem="Cpi-4B-Ze0" firstAttribute="centerX" secondItem="189-Sl-JpK" secondAttribute="centerX" id="dlG-h9-DgH"/>
+                            <constraint firstItem="kgY-c3-8SR" firstAttribute="top" secondItem="189-Sl-JpK" secondAttribute="bottom" constant="8" id="i3K-3e-1dm"/>
+                            <constraint firstItem="189-Sl-JpK" firstAttribute="centerY" secondItem="WaJ-bz-6Bp" secondAttribute="centerY" id="wMr-Fg-q3P"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Cz3-Tw-Hq6"/>
+                                <exclude reference="ILr-jL-wyo"/>
+                                <exclude reference="Idb-5i-DXw"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="ILr-jL-wyo"/>
+                                <include reference="Idb-5i-DXw"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="thankYouLabel" destination="Cpi-4B-Ze0" id="xwD-yf-4kg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMa-x0-gff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="472"/>
         </scene>
         <!--Add Entry View Controller-->
         <scene sceneID="e3E-Fg-HvQ">
@@ -1494,7 +1585,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="addIdeaButtonTouchUpInside:" destination="zJC-vB-l4B" eventType="touchUpInside" id="NcO-5h-Q3d"/>
                                                     <action selector="submitEntryButtonTouchUpInside:" destination="5DM-wn-dSQ" eventType="touchUpInside" id="Rxl-jd-1iv"/>
                                                 </connections>
                                             </button>
@@ -2087,9 +2177,6 @@
                                         <include reference="UXh-CX-HQk"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="dJo-N9-xfc" appends="YES" id="YEm-Ra-awL"/>
-                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C'est à votre tour de proposer quelque chose !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reb-vb-K2s">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2172,6 +2259,7 @@
                         <outlet property="entryThemePickerView" destination="TaM-Nk-qGI" id="caj-rS-1re"/>
                         <outlet property="faceViewIndicatorLabel" destination="dXE-Jk-HYe" id="idN-hF-PPn"/>
                         <outlet property="nameTextField" destination="mi0-Wk-GB4" id="tPA-1n-txg"/>
+                        <segue destination="NIz-Re-rxX" kind="show" identifier="showThankYouForSubmitting" id="zr3-eM-UO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ucv-yz-cGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2190,9 +2278,8 @@
                         <action selector="faceViewHandlePanGesture:" destination="5DM-wn-dSQ" id="8YQ-D0-Wc3"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="dJo-N9-xfc"/>
             </objects>
-            <point key="canvasLocation" x="-215.25" y="1140"/>
+            <point key="canvasLocation" x="-476" y="1188"/>
         </scene>
         <!--Splash-->
         <scene sceneID="R5c-l1-AJC">
@@ -2231,7 +2318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voR-FM-kLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1717" y="387"/>
+            <point key="canvasLocation" x="-1914" y="436"/>
         </scene>
     </scenes>
     <resources>
@@ -2240,4 +2327,7 @@
         <image name="Thumb Up" width="25" height="25"/>
         <image name="thumb-up-cropped" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q3m-nv-GAI"/>
+    </inferredMetricsTieBreakers>
 </document>

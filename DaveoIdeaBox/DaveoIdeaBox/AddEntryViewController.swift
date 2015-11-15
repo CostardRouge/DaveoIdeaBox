@@ -119,27 +119,21 @@ class AddEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
             else {
                 // Saving the valid entry
                 EntryManager.sharedInstance.addEntry(entry)
-                print(entry.creationDate)
-                
-                
-//                print(entry.toJson() as? String)
-                //print(entry.toJsonString(true))
-                
-//                print(entry.id)
-//                print(entry.authorEmail)
-//                print(entry.authorName)
-//                print(entry.content)
-//                print(entry.mood)
-                
-//                print(entry.modificationDate)
-//                print(entry.thumbUpCount)
-                
+                performSegueWithIdentifier("showThankYouForSubmitting", sender: nil)
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showThankYouForSubmitting" {
+            //print("prepareForSegue howThankYouForSubmitting")
+            if let scvc = segue.destinationViewController as? SubmitCompletedViewController {
+                scvc.entry = entry
             }
         }
     }
     
     //MARK: Actions
-    
     @IBAction func submitEntryButtonTouchUpInside(sender: UIButton) {
         submitEntry()
     }

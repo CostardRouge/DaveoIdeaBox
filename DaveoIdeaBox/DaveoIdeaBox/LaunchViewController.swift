@@ -13,7 +13,7 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        performSelector(Selector("startDaveoIdeaBoxApp"), withObject: nil, afterDelay: 1.5)
+        performSelector(Selector("startDaveoIdeaBoxApp"), withObject: nil, afterDelay: 0.1)
     }
     
     func startDaveoIdeaBoxApp() {
