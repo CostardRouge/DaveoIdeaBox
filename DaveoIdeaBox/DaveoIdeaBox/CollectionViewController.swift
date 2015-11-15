@@ -65,6 +65,10 @@ class EntriesCollectionViewController: UICollectionViewController {
             vc.entry = entry
         }
     }
+    
+    @IBAction func submitCompletedViewControllerDismissed(segue:UIStoryboardSegue) {
+        // Here I could gather back the recently created entry
+    }
 
     // MARK: UICollectionViewDataSource
 

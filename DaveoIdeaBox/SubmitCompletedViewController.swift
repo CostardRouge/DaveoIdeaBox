@@ -37,4 +37,10 @@ class SubmitCompletedViewController: UIViewController {
         
         updateUI()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "submitCompletedViewControllerDismissed" {
+            // Here I could transmit the recently created entry
+        }
+    }
 }
