@@ -18,7 +18,11 @@ class EntriesCollectionViewController: UICollectionViewController {
     
     // Attributes
     private var isViewAppearedOnce = false
-    private var entries = [Idea]()
+    private var entries: [Idea] {
+        get {
+            return EntryManager.sharedInstance.getEntries(true)
+        }
+    }
     
     func entryForIndexPath(indexPath: NSIndexPath) -> Idea {
         // var section = indexPath.section;
@@ -28,51 +32,26 @@ class EntriesCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //EntryManager.sharedInstance.createRandomEntries()
 
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = true
 
         // Register cell classes
         //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Fill test entries
-        let authors = ["cyril", "steeve", "malicia", "mathieu", "lucile", "antoine", "christophe", "mustapha", "riad", "elias", "guillaume", "alice", "helene", "arnaud", "sinthuyan", "gilles", "charly", "saadna"]
-        
-        for var index = 0; index < 32; ++index {
-            let item = Idea()
-            item.content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            
-            // get ramdom author
-            let arrayIndex = arc4random_uniform(UInt32(authors.count))
-            let randomAuthor = authors[Int(arrayIndex)]
-            
-            item.author = randomAuthor
-            item.creationDate = NSDate()
-            item.thumbUpCount = Int(0 + arc4random_uniform(UInt32(15)))
-            
-            //.insert(item, atIndex: 0)
-            entries.append(item)
-        }
-        
-        // Let's sort all entries by thumb up count
-        entries = entries.sort { $0.thumbUpCount > $1.thumbUpCount }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         if self.isViewAppearedOnce {
             self.entriesCollectionView.reloadData()
-            print("reloadData")
         }
         
         // Yes, viewDidLoad was called once
         self.isViewAppearedOnce = true
     }
 
-    /*
     // MARK: - Navigation
-    
-    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
@@ -90,13 +69,11 @@ class EntriesCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return entries.count
+        return EntryManager.sharedInstance.getEntries().count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -104,15 +81,7 @@ class EntriesCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         let entry = entryForIndexPath(indexPath)
-        
-        // cell.backgroundColor = UIColor.redColor()
         cell.entry = entry
-//        cell.authorLabel?.text = entry.author.capitalizedString
-//        cell.contentLabel?.text = entry.content
-//        cell.thumbUpCountButton.setTitle("\(entry.thumbUpCount!)", forState: .Normal)
-        
-        
-        //cell.ideaThemedImageView?.contentMode = .ScaleAspectFill
         return cell
     }
     

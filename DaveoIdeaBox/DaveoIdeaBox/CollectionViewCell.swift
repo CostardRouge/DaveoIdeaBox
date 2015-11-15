@@ -24,14 +24,7 @@ class EntryCollectionViewCell: UICollectionViewCell {
     
     @IBAction func thumbUpButtonTouchUpInside(sender: UIButton) {
         if let loadedEntry = entry {
-            let newVotesCount = 1
-            
-            if let entryVotes = loadedEntry.thumbUpCount {
-                loadedEntry.thumbUpCount = entryVotes + newVotesCount
-            }
-            else {
-                loadedEntry.thumbUpCount = newVotesCount
-            }
+            loadedEntry.thumbUpCount = loadedEntry.thumbUpCount + 1
             entry = loadedEntry
         }
     }
@@ -39,14 +32,8 @@ class EntryCollectionViewCell: UICollectionViewCell {
     func updateUI() {
         if let loadedEntry = entry {
             contentLabel?.text = loadedEntry.content
-            authorLabel?.text = loadedEntry.author.capitalizedString
-//            if (loadedEntry.thumbUpCount! == 0)  {
-//                thumbUpCountButton.hidden = true
-//            }
-//            else {
-//                thumbUpCountButton.hidden = false
-                thumbUpCountButton.setTitle("\(loadedEntry.thumbUpCount!)", forState: .Normal)
-//            }
+            authorLabel?.text = loadedEntry.authorName.capitalizedString
+            thumbUpCountButton.setTitle("\(loadedEntry.thumbUpCount)", forState: .Normal)
             
             let imageNamed = "\(Int(1 + arc4random_uniform(UInt32(8))))"
             ideaThemedImageView?.image = UIImage(named: imageNamed)

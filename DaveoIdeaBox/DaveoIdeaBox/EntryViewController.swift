@@ -29,7 +29,7 @@ class EntryViewController: UIViewController {
     func setupGUI() {
         if let loadedEntry = entry {
             contentLabel?.text = loadedEntry.content
-            authorLabel?.text = makeAuthorLabelText(loadedEntry.author)
+            authorLabel?.text = makeAuthorLabelText(loadedEntry.authorName)
             creationDateLabel.text = makeCreationDateLabelText(loadedEntry.creationDate)
             thumbUpCount.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
             

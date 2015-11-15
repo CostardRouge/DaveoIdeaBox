@@ -8,46 +8,62 @@
 
 import UIKit
 
-class Idea {
+class Idea: Serializable {
     // Enums
-    struct Theme {
-        static let Undefined = (printableName: "N/A", preferedColor: UIColor.redColor())
-        static let Technology = (printableName: "Technologie", preferedColor: UIColor.redColor())
-        static let Innovation = (printableName: "Innovation", preferedColor: UIColor.redColor())
-        static let HumanRessource = (printableName: "Ressources humaines", preferedColor: UIColor.redColor())
-        static let Development = (printableName: "Developpement", preferedColor: UIColor.redColor())
-        static let Selfcare = (printableName: "Bien-être", preferedColor: UIColor.redColor())
-        static let Party = (printableName: "Festif", preferedColor: UIColor.redColor())
-        static let Travel = (printableName: "Voyage", preferedColor: UIColor.redColor())
-        static let Responsive = (printableName: "Buisness responsive", preferedColor: UIColor.redColor())
+    typealias themeDefinition = (id: Theme, printableName: String, preferedColor: UIColor)
+    typealias moodDefinition = (id: Mood, printableName: String, preferedColor: UIColor)
+
+    enum Theme {
+        case Technology, Innovation, HumanRessource, Development, Selfcare, Party, Travel, Responsive, Other
     }
     
-    enum eTheme {
-        case Undefined(Int, String, preferredColor: UIColor)
-        case Technology(Int, String, preferredColor: UIColor)
-        case Innovation(Int, String, preferredColor: UIColor)
-        case HumanRessource(Int, String, preferredColor: UIColor)
-        case Development(Int, String, preferredColor: UIColor)
-        case Selfcare(Int, String, preferredColor: UIColor)
-        case Party(Int, String, preferredColor: UIColor)
-        case Travel(Int, String, preferredColor: UIColor)
-        case Responsive(Int, String, preferredColor: UIColor)
+    enum Mood: Int {
+        case Upset = 20, Sad = 40, Neutral = 55, Happy = 80, Euphoric = 90
     }
     
-    enum Mood {
-        case Undefined, Upset, Neutral, Sad, Happy
+    static let themes: [themeDefinition] = [
+        (id: Theme.Technology, printableName: "Technologie", preferedColor: UIColor.redColor()),
+        (id: Theme.Innovation, printableName: "Innovation", preferedColor: UIColor.redColor()),
+        (id: Theme.HumanRessource, printableName: "Ressources humaines", preferedColor: UIColor.redColor()),
+        (id: Theme.Development, printableName: "Developpement", preferedColor: UIColor.redColor()),
+        (id: Theme.Selfcare, printableName: "Bien-être", preferedColor: UIColor.redColor()),
+        (id: Theme.Party, printableName: "Festif", preferedColor: UIColor.redColor()),
+        (id: Theme.Travel, printableName: "Voyage", preferedColor: UIColor.redColor()),
+        (id: Theme.Responsive, printableName: "Buisness responsive", preferedColor: UIColor.redColor()),
+        (id: Theme.Other, printableName: "Autre", preferedColor: UIColor.redColor())
+    ]
+    
+    static let moods: [moodDefinition] = [
+        (id: Mood.Upset, printableName: "Contrarié", preferedColor: UIColor.redColor()),
+        (id: Mood.Neutral, printableName: "Neutre", preferedColor: UIColor.redColor()),
+        (id: Mood.Sad, printableName: "Triste", preferedColor: UIColor.redColor()),
+        (id: Mood.Happy, printableName: "Joyeux", preferedColor: UIColor.redColor()),
+        (id: Mood.Euphoric, printableName: "Euphorique", preferedColor: UIColor.redColor())
+    ]
+
+    override init() {
+        id = NSUUID().UUIDString
+        theme = Theme.Other.hashValue
+        mood = Mood.Happy.rawValue
+        content = String()
+        authorName = String()
+        authorEmail = String()
+        creationDate = NSDate()
+        thumbUpCount = 0
     }
     
     // Attributes
-    var id = NSUUID().UUIDString
+    var id: String
     
-    var theme = Theme.Undefined
-    var mood = Mood.Undefined
-    var preferedThemedImageName: String?
+    var theme: Int
+    var mood: Int
     
-    var content = String()
-    var author = String()
-    var creationDate = NSDate()
+    var content: String
+    var authorName: String
+    var authorEmail: String
+    var creationDate: NSDate
+    var thumbUpCount: Int
+    
     var modificationDate: NSDate?
-    var thumbUpCount: Int?
+    var preferedThemedImageName: String?
 }

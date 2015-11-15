@@ -10,7 +10,6 @@ import UIKit
 
 class AddEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate, FaceViewDataSource {
     // GUI elements
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailAdressTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
@@ -19,8 +18,12 @@ class AddEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var faceViewIndicatorLabel: UILabel!
     
     // Attributes
-    var entry = Idea()
-    var pickerData = [String]()
+    var entry = Idea() {
+        didSet {
+            // updateUI()
+        }
+    }
+    var pickerData = Idea.themes
     
     // Faceview happiness value
     var happiness: Int = 100 {
@@ -37,17 +40,21 @@ class AddEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func updateFaceViewIndicator() {
-        if happiness >= 60 {
-            faceViewIndicatorLabel?.text = "Joyeux"
+        
+        if happiness <= Idea.Mood.Upset.rawValue {
+            faceViewIndicatorLabel?.text = "Contrarié"
         }
-        else if happiness <= 60 && happiness > 45 {
-            faceViewIndicatorLabel?.text = "Neutre"
-        }
-        else if happiness <= 45 && happiness > 15  {
+        else if happiness <= Idea.Mood.Sad.rawValue {
             faceViewIndicatorLabel?.text = "Triste"
         }
+        else if happiness <= Idea.Mood.Neutral.rawValue {
+            faceViewIndicatorLabel?.text = "Neutre"
+        }
+        else if happiness <= Idea.Mood.Happy.rawValue {
+            faceViewIndicatorLabel?.text = "Joyeux"
+        }
         else {
-            faceViewIndicatorLabel?.text = "Contrarié"
+            faceViewIndicatorLabel?.text = "Euphorique"
         }
     }
     
@@ -55,37 +62,78 @@ class AddEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
         updateFaceViewIndicator()
         
         // So many delegates
-        nameTextField.delegate = self
-        emailAdressTextField.delegate = self
-        contentTextView.delegate = self
-        entryMoodFaceView.dataSource = self
-        
-        // Add entry theme
-        pickerData.append(Idea.Theme.Technology.printableName)
-        pickerData.append(Idea.Theme.Innovation.printableName)
-        pickerData.append(Idea.Theme.HumanRessource.printableName)
-        pickerData.append(Idea.Theme.Development.printableName)
-        pickerData.append(Idea.Theme.Selfcare.printableName)
-        pickerData.append(Idea.Theme.Party.printableName)
-        pickerData.append(Idea.Theme.Travel.printableName)
-        pickerData.append(Idea.Theme.Responsive.printableName)
+        nameTextField?.delegate = self
+        emailAdressTextField?.delegate = self
+        contentTextView?.delegate = self
+        entryMoodFaceView?.dataSource = self
         
         // Add choice to picker view
-        entryThemePickerView.delegate = self
-        entryThemePickerView.dataSource = self
+        entryThemePickerView?.delegate = self
+        entryThemePickerView?.dataSource = self
         
         // Select defaut picker view choice
-        entryThemePickerView.selectRow(4, inComponent: 0, animated: true)
+        entryThemePickerView?.selectRow(4, inComponent: 0, animated: true)
     }
     
     func submitEntry() {
+        var issue = false // could be a detailled value further
+        
         if isViewLoaded() {
-            let emptyFields = nameTextField.text?.isEmpty == true || emailAdressTextField.text?.isEmpty == true || contentTextView.text?.isEmpty == true
+            // Checking empty fields
+            issue = nameTextField.text?.isEmpty == true || emailAdressTextField.text?.isEmpty == true || contentTextView.text?.isEmpty == true
             
-            if emptyFields {
+            // Filling our entry object
+            if let selectedRow = entryThemePickerView?.selectedRowInComponent(0) {
+                entry.theme = pickerData[selectedRow].id.hashValue
+                if (!issue) {
+                    entry.authorName = nameTextField.text!
+                    entry.authorEmail = emailAdressTextField.text!
+                    entry.content = contentTextView.text!
+                    
+                    if happiness <= Idea.Mood.Upset.rawValue {
+                        entry.mood = Idea.Mood.Upset.rawValue
+                    }
+                    else if happiness <= Idea.Mood.Sad.rawValue {
+                        entry.mood = Idea.Mood.Upset.rawValue
+                    }
+                    else if happiness <= Idea.Mood.Neutral.rawValue {
+                        entry.mood = Idea.Mood.Upset.rawValue
+                    }
+                    else if happiness <= Idea.Mood.Happy.rawValue {
+                        entry.mood = Idea.Mood.Upset.rawValue
+                    }
+                    else {
+                        entry.mood = Idea.Mood.Euphoric.rawValue
+                    }
+                }
+            }
+            else {
+                issue = true
+            }
+            
+            if issue {
                 let alert = UIAlertController(title: "Allô Houston ?!", message: "Il manque quelque chose", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "Oops, c'est de ma faute", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else {
+                // Saving the valid entry
+                EntryManager.sharedInstance.addEntry(entry)
+                print(entry.creationDate)
+                
+                
+//                print(entry.toJson() as? String)
+                //print(entry.toJsonString(true))
+                
+//                print(entry.id)
+//                print(entry.authorEmail)
+//                print(entry.authorName)
+//                print(entry.content)
+//                print(entry.mood)
+                
+//                print(entry.modificationDate)
+//                print(entry.thumbUpCount)
+                
             }
         }
     }
@@ -119,7 +167,6 @@ class AddEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
         view.endEditing(true)
     }
     
-    
     //MARK: Delegates
     func smilinessForFaceView(sender: FaceView) -> Double? {
         return Double(happiness - 50) / 50
@@ -152,7 +199,7 @@ class AddEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return pickerData[row].printableName
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

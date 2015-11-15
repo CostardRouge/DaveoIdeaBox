@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2422DAEC1BF8B8C000C0DFF9 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAEB1BF8B8C000C0DFF9 /* EntryManager.swift */; };
+		2422DAEE1BF8F06100C0DFF9 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAED1BF8F06100C0DFF9 /* Serializable.swift */; };
+		2422DAF01BF8F44D00C0DFF9 /* Array+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */; };
 		2476E3001BF8175200C4CFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */; };
 		2476E3031BF8175200C4CFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2476E3011BF8175200C4CFA2 /* LaunchScreen.storyboard */; };
 		2476E30B1BF817D800C4CFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E30A1BF817D800C4CFA2 /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2422DAEB1BF8B8C000C0DFF9 /* EntryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
+		2422DAED1BF8F06100C0DFF9 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Serializable.swift"; sourceTree = "<group>"; };
 		2476E2F51BF8175200C4CFA2 /* DaveoIdeaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2476E3021BF8175200C4CFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				2476E3131BF8183400C4CFA2 /* Idea.swift */,
+				2422DAEB1BF8B8C000C0DFF9 /* EntryManager.swift */,
+				2422DAED1BF8F06100C0DFF9 /* Serializable.swift */,
+				2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2422DAF01BF8F44D00C0DFF9 /* Array+Serializable.swift in Sources */,
 				2476E31E1BF8183C00C4CFA2 /* CollectionViewController.swift in Sources */,
 				2476E31D1BF8183C00C4CFA2 /* CollectionViewCell.swift in Sources */,
 				2476E3141BF8183400C4CFA2 /* Idea.swift in Sources */,
@@ -194,6 +204,8 @@
 				2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */,
 				2476E30E1BF8180100C4CFA2 /* EntryTileView.swift in Sources */,
 				2476E3241BF8183C00C4CFA2 /* FaceView.swift in Sources */,
+				2422DAEE1BF8F06100C0DFF9 /* Serializable.swift in Sources */,
+				2422DAEC1BF8B8C000C0DFF9 /* EntryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +350,7 @@
 				2476E3091BF8175200C4CFA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
