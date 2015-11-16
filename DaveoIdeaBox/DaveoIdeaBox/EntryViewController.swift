@@ -34,28 +34,21 @@ class EntryViewController: UIViewController {
         if let loadedEntry = entry {
             contentTextView?.text = loadedEntry.content
             authorButton?.setTitle(loadedEntry.authorName.uppercaseString, forState: .Normal)
-            let tm = getThemePrintableNameFor(loadedEntry.theme)
-            themeButton?.setTitle(tm?.uppercaseString, forState: .Normal)
             
-            
+            if let themeName = Idea().getThemePrintableNameFor(loadedEntry.theme) {
+                themeButton?.setTitle(themeName.uppercaseString, forState: .Normal)
+            }
             
             //authorLabel?.text = makeAuthorLabelText(loadedEntry.authorName)
             creationDateLabel?.text = makeCreationDateLabelText(loadedEntry.creationDate)
             thumbUpCount?.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
             
-            let imageNamed = "\(Int(1 + arc4random_uniform(UInt32(8))))"
+            let imageNamed = Idea().getThemeImageNameFor(loadedEntry.theme) // should be optionnal
             ideaThemedImageView?.image = UIImage(named: imageNamed)
         }
     }
     
-    func getThemePrintableNameFor(hashValue: Int) -> String? {
-        for theme in Idea.themes {
-            if theme.id.hashValue == hashValue {
-                return theme.printableName
-            }
-        }
-        return nil
-    }
+
     
     @IBAction func thumbUpTouchUpInside(sender: UIButton) {
         // Model mechanism

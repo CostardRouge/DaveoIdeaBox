@@ -21,6 +21,31 @@ class Idea: Serializable {
         case Upset = 20, Sad = 40, Neutral = 55, Happy = 80, Euphoric = 90
     }
     
+    func getThemeImageNameFor(hashValue: Int) -> String {
+        
+        var imagesNamed = [String](count: Idea.themes.count, repeatedValue: "")
+        imagesNamed.insert("technology", atIndex: Theme.Technology.hashValue)
+        imagesNamed.insert("innovation", atIndex: Theme.Innovation.hashValue)
+        imagesNamed.insert("office", atIndex: Theme.HumanRessource.hashValue)
+        imagesNamed.insert("development", atIndex: Theme.Development.hashValue)
+        imagesNamed.insert("health", atIndex: Theme.Selfcare.hashValue)
+        imagesNamed.insert("party", atIndex: Theme.Party.hashValue)
+        imagesNamed.insert("travel", atIndex: Theme.Travel.hashValue)
+        imagesNamed.insert("business", atIndex: Theme.Responsive.hashValue)
+        imagesNamed.insert("other", atIndex: Theme.Other.hashValue)
+        
+        return imagesNamed[hashValue]
+    }
+    
+    func getThemePrintableNameFor(hashValue: Int) -> String? {
+        for theme in Idea.themes {
+            if theme.id.hashValue == hashValue {
+                return theme.printableName
+            }
+        }
+        return nil
+    }
+    
     static let themes: [themeDefinition] = [
         (id: Theme.Technology, printableName: "Technologie", preferedColor: UIColor.redColor()),
         (id: Theme.Innovation, printableName: "Innovation", preferedColor: UIColor.redColor()),

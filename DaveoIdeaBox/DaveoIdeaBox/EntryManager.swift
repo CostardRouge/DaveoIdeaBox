@@ -39,6 +39,10 @@ class EntryManager {
             item.creationDate = NSDate()
             item.thumbUpCount = Int(0 + arc4random_uniform(UInt32(15)))
             
+            
+            item.mood = Int(0 + arc4random_uniform(UInt32(100)))
+            item.theme = Int(arc4random_uniform(UInt32(Idea.themes.count)))
+            
             entries.append(item)
         }
         

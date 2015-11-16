@@ -35,8 +35,11 @@ class EntryCollectionViewCell: UICollectionViewCell {
             authorLabel?.text = loadedEntry.authorName.capitalizedString
             thumbUpCountButton.setTitle("\(loadedEntry.thumbUpCount)", forState: .Normal)
             
-            let imageNamed = "\(Int(1 + arc4random_uniform(UInt32(8))))"
-            ideaThemedImageView?.image = UIImage(named: imageNamed)
+            
+            let imageNamed = Idea().getThemeImageNameFor(loadedEntry.theme) // should be optionnal
+            let image = UIImage(named: imageNamed)
+       
+            ideaThemedImageView?.image = image
             //ideaThemedImageView?.contentMode = .ScaleAspectFill
         }
     }
