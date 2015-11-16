@@ -63,6 +63,22 @@ class EntryManager {
         return persistEntries()
     }
     
+    func deleteEntry(entry: Idea, needToBeSorted: Bool? = false) -> Bool {
+        // Deleting the entry
+        if let found = entries.indexOf(entry) {
+            entries.removeAtIndex(found)
+        }
+        
+        if let sortDemand = needToBeSorted {
+            if sortDemand {
+                sortEntries()
+            }
+        }
+        
+        // We could persist the date at the application terminating
+        return persistEntries()
+    }
+    
     func sortEntries() {
         // Let's sort all entries by thumb up count
         entries = entries.sort { $0.thumbUpCount > $1.thumbUpCount }

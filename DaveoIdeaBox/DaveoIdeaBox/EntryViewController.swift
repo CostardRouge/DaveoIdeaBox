@@ -10,11 +10,15 @@ import UIKit
 
 class EntryViewController: UIViewController {
     // GUI elements
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var creationDateLabel: UILabel!
     @IBOutlet weak var thumbUpCount: UILabel!
     @IBOutlet weak var ideaThemedImageView: UIImageView!
+
+    @IBOutlet weak var authorButton: UIButton!
+    @IBOutlet weak var themeButton: UIButton!
+    
+    @IBOutlet weak var deleteEntryButton: RoundedButton!
     
     // Attributes
     var entry: Idea?
@@ -28,24 +32,29 @@ class EntryViewController: UIViewController {
     
     func setupGUI() {
         if let loadedEntry = entry {
-            contentLabel?.text = loadedEntry.content
-            authorLabel?.text = makeAuthorLabelText(loadedEntry.authorName)
-            creationDateLabel.text = makeCreationDateLabelText(loadedEntry.creationDate)
-            thumbUpCount.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
+            contentTextView?.text = loadedEntry.content
+            authorButton?.setTitle(loadedEntry.authorName.uppercaseString, forState: .Normal)
+            let tm = getThemePrintableNameFor(loadedEntry.theme)
+            themeButton?.setTitle(tm?.uppercaseString, forState: .Normal)
+            
+            
+            
+            //authorLabel?.text = makeAuthorLabelText(loadedEntry.authorName)
+            creationDateLabel?.text = makeCreationDateLabelText(loadedEntry.creationDate)
+            thumbUpCount?.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
             
             let imageNamed = "\(Int(1 + arc4random_uniform(UInt32(8))))"
             ideaThemedImageView?.image = UIImage(named: imageNamed)
         }
     }
     
-    @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        let tapAlert = UIAlertController(title: "Swiped", message: "SwipeLeft", preferredStyle: UIAlertControllerStyle.Alert)
-        tapAlert.addAction(UIAlertAction(title: "OK", style: .Destructive, handler: nil))
-        self.presentViewController(tapAlert, animated: true, completion: nil)
-    }
-    
-    @IBAction func seeOtherIdeasTouchUpInside(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
+    func getThemePrintableNameFor(hashValue: Int) -> String? {
+        for theme in Idea.themes {
+            if theme.id.hashValue == hashValue {
+                return theme.printableName
+            }
+        }
+        return nil
     }
     
     @IBAction func thumbUpTouchUpInside(sender: UIButton) {
@@ -54,6 +63,47 @@ class EntryViewController: UIViewController {
         
         // GUI mechanism
         setupGUI()
+    }
+    
+    @IBAction func deleteEntryButtonTouchUpInside(sender: AnyObject) {
+        print("deleteEntryButtonTouchUpInside")
+        
+        let alertController = UIAlertController(title: "Supprimer ?!", message: "C'est definitif...", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Annuler", style: .Cancel) { (action) in
+            print("Deletion cancelled")
+        }
+        
+        let destructiveAction = UIAlertAction(title: "Supprimer", style: .Destructive) { (action) in
+            print("Deletion cancelled")
+            if let loadedEntry = self.entry {
+                EntryManager.sharedInstance.deleteEntry(loadedEntry, needToBeSorted: true)
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+        }
+        
+        alertController.addAction(destructiveAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func secretTapGesture(sender: AnyObject) {
+       print("secretTapGesture")
+        deleteEntryButton.hidden = !deleteEntryButton.hidden
+    }
+    
+    @IBAction func addIdeaViewHandleTap(sender: UITapGestureRecognizer) {
+        performSegueWithIdentifier("entryViewControllerDismissed", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("entryViewControllerDismissed")
+        if segue.identifier == "entryViewControllerDismissed" {
+            if let aevc = segue.destinationViewController as? AddEntryViewController {
+                aevc.entry = entry!
+            }
+        }
     }
     
     // GUI helper methods
