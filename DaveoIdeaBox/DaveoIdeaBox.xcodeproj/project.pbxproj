@@ -26,6 +26,7 @@
 		2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */; };
 		2476E3231BF8183C00C4CFA2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */; };
 		2476E3241BF8183C00C4CFA2 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31C1BF8183C00C4CFA2 /* FaceView.swift */; };
+		24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		2476E31C1BF8183C00C4CFA2 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */,
 				2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */,
+				24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */,
 				2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */,
 				2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */,
 				2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */,
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2422DAF01BF8F44D00C0DFF9 /* Array+Serializable.swift in Sources */,
+				24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */,
 				2476E31E1BF8183C00C4CFA2 /* CollectionViewController.swift in Sources */,
 				2476E31D1BF8183C00C4CFA2 /* CollectionViewCell.swift in Sources */,
 				2476E3141BF8183400C4CFA2 /* Idea.swift in Sources */,

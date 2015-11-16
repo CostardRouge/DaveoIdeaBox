@@ -39,12 +39,15 @@ class EntryViewController: UIViewController {
                 themeButton?.setTitle(themeName.uppercaseString, forState: .Normal)
             }
             
-            //authorLabel?.text = makeAuthorLabelText(loadedEntry.authorName)
             creationDateLabel?.text = makeCreationDateLabelText(loadedEntry.creationDate)
             thumbUpCount?.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
             
-            let imageNamed = Idea().getThemeImageNameFor(loadedEntry.theme) // should be optionnal
-            ideaThemedImageView?.image = UIImage(named: imageNamed)
+            let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
+            let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
+            let image = UIImage(named: imagesNamed[randomIndex])
+            
+            ideaThemedImageView?.image = image
+            ideaThemedImageView?.contentMode = .ScaleAspectFill
         }
     }
     
@@ -100,10 +103,6 @@ class EntryViewController: UIViewController {
     }
     
     // GUI helper methods
-    func makeAuthorLabelText(authorName:String) -> String {
-        return String(format: "%@", authorName.uppercaseString)
-    }
-    
     func makeCreationDateLabelText(creationDate:NSDate) -> String {
         return String(format: "PUBLIÉ LE: %@", creationDate.description)
     }

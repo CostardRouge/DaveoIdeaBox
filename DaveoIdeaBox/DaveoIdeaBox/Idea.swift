@@ -21,18 +21,20 @@ class Idea: Serializable {
         case Upset = 20, Sad = 40, Neutral = 55, Happy = 80, Euphoric = 90
     }
     
-    func getThemeImageNameFor(hashValue: Int) -> String {
+    func getThemeImageNamesFor(hashValue: Int) -> [String] {
         
-        var imagesNamed = [String](count: Idea.themes.count, repeatedValue: "")
-        imagesNamed.insert("technology", atIndex: Theme.Technology.hashValue)
-        imagesNamed.insert("innovation", atIndex: Theme.Innovation.hashValue)
-        imagesNamed.insert("office", atIndex: Theme.HumanRessource.hashValue)
-        imagesNamed.insert("development", atIndex: Theme.Development.hashValue)
-        imagesNamed.insert("health", atIndex: Theme.Selfcare.hashValue)
-        imagesNamed.insert("party", atIndex: Theme.Party.hashValue)
-        imagesNamed.insert("travel", atIndex: Theme.Travel.hashValue)
-        imagesNamed.insert("business", atIndex: Theme.Responsive.hashValue)
-        imagesNamed.insert("other", atIndex: Theme.Other.hashValue)
+        var imagesNamed = [[String]](count: Idea.themes.count, repeatedValue: ["+", "+"])
+        
+        
+        imagesNamed.insert(["technology_0", "technology_1"], atIndex: Theme.Technology.hashValue)
+        imagesNamed.insert(["innovation_0"], atIndex: Theme.Innovation.hashValue)
+        imagesNamed.insert(["office_0"], atIndex: Theme.HumanRessource.hashValue)
+        imagesNamed.insert(["development_0", "development_1"], atIndex: Theme.Development.hashValue)
+        imagesNamed.insert(["selfcare_0", "selfcare_1"], atIndex: Theme.Selfcare.hashValue)
+        imagesNamed.insert(["party_0", "party_1"], atIndex: Theme.Party.hashValue)
+        imagesNamed.insert(["travel_0", "travel_1"], atIndex: Theme.Travel.hashValue)
+        imagesNamed.insert(["business_0"], atIndex: Theme.Responsive.hashValue)
+        imagesNamed.insert(["other_0", "other_1"], atIndex: Theme.Other.hashValue)
         
         return imagesNamed[hashValue]
     }
