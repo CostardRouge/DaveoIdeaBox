@@ -19,5 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(application: UIApplication) {
         print("applicationWillTerminate")
+        EntryManager.sharedInstance.persistEntries()
     }
 }

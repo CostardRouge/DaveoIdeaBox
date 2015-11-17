@@ -21,13 +21,40 @@ class EntryViewController: UIViewController {
     @IBOutlet weak var deleteEntryButton: RoundedButton!
     
     // Attributes
-    var entry: Idea?
+    var entry: Idea? {
+        didSet {
+            setupGUI()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupGUI()
+        
+        // Handle swipe gestures
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let loadedEntry = entry {
+            if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+                switch swipeGesture.direction {
+                case UISwipeGestureRecognizerDirection.Right:
+                    entry = EntryManager.sharedInstance.getEntryAt(Direction.Right, of: loadedEntry)
+                case UISwipeGestureRecognizerDirection.Left:
+                    entry = EntryManager.sharedInstance.getEntryAt(Direction.Left, of: loadedEntry)
+                default:
+                    break
+                }
+            }
+        }
     }
     
     func setupGUI() {
@@ -51,8 +78,6 @@ class EntryViewController: UIViewController {
         }
     }
     
-
-    
     @IBAction func thumbUpTouchUpInside(sender: UIButton) {
         // Model mechanism
         entry?.thumbUpCount = (entry?.thumbUpCount)! + 1
@@ -67,11 +92,10 @@ class EntryViewController: UIViewController {
         let alertController = UIAlertController(title: "Supprimer ?!", message: "C'est definitif...", preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Annuler", style: .Cancel) { (action) in
-            print("Deletion cancelled")
+            // No action for deletion cancelling
         }
         
         let destructiveAction = UIAlertAction(title: "Supprimer", style: .Destructive) { (action) in
-            print("Deletion cancelled")
             if let loadedEntry = self.entry {
                 EntryManager.sharedInstance.deleteEntry(loadedEntry, needToBeSorted: true)
                 self.navigationController?.popToRootViewControllerAnimated(true)
@@ -85,7 +109,6 @@ class EntryViewController: UIViewController {
     }
     
     @IBAction func secretTapGesture(sender: AnyObject) {
-       print("secretTapGesture")
         deleteEntryButton.hidden = !deleteEntryButton.hidden
     }
     
@@ -94,7 +117,6 @@ class EntryViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("entryViewControllerDismissed")
         if segue.identifier == "entryViewControllerDismissed" {
             if let aevc = segue.destinationViewController as? AddEntryViewController {
                 aevc.entry = entry!

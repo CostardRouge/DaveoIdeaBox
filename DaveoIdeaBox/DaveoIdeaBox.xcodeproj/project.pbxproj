@@ -27,6 +27,7 @@
 		2476E3231BF8183C00C4CFA2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */; };
 		2476E3241BF8183C00C4CFA2 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31C1BF8183C00C4CFA2 /* FaceView.swift */; };
 		24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */; };
+		24D95B811BFA597C00E18661 /* AddEntryExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		2476E31C1BF8183C00C4CFA2 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 		24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
+		24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryExtraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +86,14 @@
 		2476E2F71BF8175200C4CFA2 /* DaveoIdeaBox */ = {
 			isa = PBXGroup;
 			children = (
-				2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */,
 				2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */,
 				24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */,
 				2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */,
 				2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */,
 				2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */,
 				2476E3191BF8183C00C4CFA2 /* AddEntryViewController.swift */,
+				24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */,
+				2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */,
 				2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */,
 				2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */,
 				2476E3251BF8188300C4CFA2 /* Models */,
@@ -211,6 +214,7 @@
 				2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */,
 				2476E30E1BF8180100C4CFA2 /* EntryTileView.swift in Sources */,
 				2476E3241BF8183C00C4CFA2 /* FaceView.swift in Sources */,
+				24D95B811BFA597C00E18661 /* AddEntryExtraViewController.swift in Sources */,
 				2422DAEE1BF8F06100C0DFF9 /* Serializable.swift in Sources */,
 				2422DAF41BF929BD00C0DFF9 /* SubmitCompletedViewController.swift in Sources */,
 				2422DAEC1BF8B8C000C0DFF9 /* EntryManager.swift in Sources */,
@@ -320,6 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DaveoIdeaBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -333,6 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DaveoIdeaBox/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 private let reuseIdentifier = "EntryCell"
-private let sectionInsets = UIEdgeInsets(top: -40.0, left: 10.0, bottom: 10.0, right: 10.0)
+private let sectionInsets = UIEdgeInsets(top: -40.0, left: 10.0, bottom: 30.0, right: 10.0)
 
 class EntriesCollectionViewController: UICollectionViewController {
     // GUI elements
@@ -33,7 +33,7 @@ class EntriesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EntryManager.sharedInstance.createRandomEntries()
+        //EntryManager.sharedInstance.createRandomEntries()
 
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = true

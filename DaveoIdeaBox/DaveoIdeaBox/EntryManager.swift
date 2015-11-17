@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum Direction {
+    case Left, Right
+}
+
 class EntryManager {
     // MARK: - Attributes
     private var entries = [Idea]()
@@ -27,24 +31,38 @@ class EntryManager {
         // Fill test entries
         let authors = ["cyril", "steeve", "malicia", "mathieu", "lucile", "antoine", "christophe", "mustapha", "riad", "elias", "guillaume", "alice", "helene", "arnaud", "sinthuyan", "gilles", "charly", "saadna"]
         
+        let contents = [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+            "Lancez une foire aux idées et des séances de créativité",
+            "Une boîte à idées est un système organisé par lequel un salarié d'une entreprise peut, etc",
+            "Découvrez une application web propre à l'innovation participative et au travail collaboratif.",
+            "Voila une excellente façon d'impliquer les salariés à l'activité de l'entreprise !",
+            "Le principe des boîtes à idées en entreprise ne date pas d'aujourd'hui !",
+            "In an ideal world this website wouldn’t exist"
+        ]
+        
         for var index = 0; index < 32; ++index {
             let item = Idea()
-            item.content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             
-            // get ramdom author
-            let arrayIndex = arc4random_uniform(UInt32(authors.count))
+            var arrayIndex = arc4random_uniform(UInt32(authors.count))
             let randomAuthorName = authors[Int(arrayIndex)]
-            
             item.authorName = randomAuthorName
+            
+            arrayIndex = arc4random_uniform(UInt32(contents.count))
+            let randomContent = contents[Int(arrayIndex)]
+            item.content = randomContent
+            
             item.creationDate = NSDate()
             item.thumbUpCount = Int(0 + arc4random_uniform(UInt32(15)))
             
             
-            item.mood = Int(0 + arc4random_uniform(UInt32(100)))
+            item.mood = Int(arc4random_uniform(UInt32(100)))
             item.theme = Int(arc4random_uniform(UInt32(Idea.themes.count)))
             
             entries.append(item)
         }
+        
+        
         
         if let sortDemand = needToBeSorted {
             if sortDemand {
@@ -65,6 +83,28 @@ class EntryManager {
         
         // We could persist the date at the application terminating
         return persistEntries()
+    }
+    
+    func getEntryAt(direction: Direction, of: Idea) -> Idea? {
+
+        
+        if (entries.count > 1) {
+            if let found = entries.indexOf(of) {
+                let maxIndex = (entries.count - 1)
+                
+                let newIndex = found + (direction == .Left ? 1 : -1)
+                
+                if newIndex > maxIndex {
+                    return entries.first
+                }
+                else if newIndex < 0 {
+                    return entries.last
+                } else {
+                    return entries[newIndex]
+                }
+            }
+        }
+        return nil
     }
     
     func deleteEntry(entry: Idea, needToBeSorted: Bool? = false) -> Bool {
