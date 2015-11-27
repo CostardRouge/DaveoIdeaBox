@@ -42,6 +42,12 @@ class EntriesCollectionViewController: UICollectionViewController {
         //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        
+        print("ff")
+    }
+    
     override func viewWillAppear(animated: Bool) {
         if self.isViewAppearedOnce {
             self.entriesCollectionView.reloadData()

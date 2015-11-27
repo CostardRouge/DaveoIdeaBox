@@ -97,10 +97,19 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        // In order to prevent screen saver activation
+        AppDelegate.postUserActivityNotification()
+        
         if (text == "\n") {
             textView.resignFirstResponder()
             return false
         }
+        return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        // In order to prevent screen saver activation
+        AppDelegate.postUserActivityNotification()
         return true
     }
 }

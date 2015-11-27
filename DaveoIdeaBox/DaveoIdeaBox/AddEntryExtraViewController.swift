@@ -117,7 +117,7 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
-                // Saving the valid entry
+                // Addind the valid entry
                 EntryManager.sharedInstance.addEntry(loadedEntry)
                 performSegueWithIdentifier("showThankYouForSubmitting", sender: nil)
             }
@@ -146,6 +146,7 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
         {
         case .Ended: fallthrough
         case .Changed:
+            AppDelegate.postUserActivityNotification()
             let translation = gesture.translationInView(entryMoodFaceView)
             let happinessChange = Int(translation.y / Constants.HappinessGestureScale)
             if (happinessChange != 0) {
@@ -159,6 +160,10 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
     //MARK: Delegates
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row].printableName
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("selecting")
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
