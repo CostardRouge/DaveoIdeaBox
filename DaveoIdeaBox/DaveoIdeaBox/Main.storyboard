@@ -39,81 +39,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKS-h9-H9L" userLabel="ContributeView">
-                                <rect key="frame" x="0.0" y="436" width="600" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VOUS AUSSI, DITES NOUS COMMENT AMELIORER DAVEO !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="HmS-ki-7th">
-                                        <rect key="frame" x="130" y="8" width="340" height="15"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <color key="textColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-PU-ZMH" userLabel="AddIdeaView">
-                                        <rect key="frame" x="180" y="31" width="240" height="60"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boe-ex-ui7" customClass="RoundedButton" customModule="DaveoIdeaBox" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="8" width="45" height="45"/>
-                                                <animations/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="7q8-xW-iiV"/>
-                                                    <constraint firstAttribute="width" constant="45" id="yfP-fS-9GL"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
-                                                <state key="normal" title="+">
-                                                    <color key="titleColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="5DM-wn-dSQ" kind="show" identifier="entryViewControllerDismissed" id="Xy0-n2-VVo"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROPOSER UNE IDÉE…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="aGN-wA-JRN">
-                                                <rect key="frame" x="61" y="8" width="171" height="44"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="1Ls-e4-VLu"/>
-                                            <constraint firstItem="aGN-wA-JRN" firstAttribute="top" secondItem="N2Q-PU-ZMH" secondAttribute="top" constant="8" id="JVg-Rh-HYE"/>
-                                            <constraint firstAttribute="trailing" secondItem="aGN-wA-JRN" secondAttribute="trailing" constant="8" id="KOi-B8-smd"/>
-                                            <constraint firstItem="aGN-wA-JRN" firstAttribute="leading" secondItem="boe-ex-ui7" secondAttribute="trailing" constant="8" id="Rvn-W8-RMw"/>
-                                            <constraint firstItem="boe-ex-ui7" firstAttribute="leading" secondItem="N2Q-PU-ZMH" secondAttribute="leading" constant="8" id="Zo9-MB-3Ms"/>
-                                            <constraint firstItem="boe-ex-ui7" firstAttribute="centerY" secondItem="N2Q-PU-ZMH" secondAttribute="centerY" id="pUD-fI-yHN"/>
-                                            <constraint firstAttribute="bottom" secondItem="aGN-wA-JRN" secondAttribute="bottom" constant="8" id="sWv-aH-T8I"/>
-                                            <constraint firstAttribute="height" constant="60" id="xPj-AS-ANe"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Zex-en-yPr" appends="YES" id="KXK-Yf-x52"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.1960784314" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="N2Q-PU-ZMH" firstAttribute="centerX" secondItem="xKS-h9-H9L" secondAttribute="centerX" id="8OG-ah-hJC"/>
-                                    <constraint firstAttribute="height" constant="100" id="CEk-Cd-GSp"/>
-                                    <constraint firstAttribute="bottom" secondItem="N2Q-PU-ZMH" secondAttribute="bottom" constant="9" id="THt-f1-pr0"/>
-                                    <constraint firstItem="HmS-ki-7th" firstAttribute="top" secondItem="xKS-h9-H9L" secondAttribute="top" constant="8" id="cki-ck-Tpb"/>
-                                    <constraint firstItem="HmS-ki-7th" firstAttribute="centerX" secondItem="xKS-h9-H9L" secondAttribute="centerX" id="fqw-RN-ei3"/>
-                                </constraints>
-                            </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EIA-nb-pAJ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
@@ -255,6 +180,81 @@
                                     <action selector="deleteEntryButtonTouchUpInside:" destination="5O5-ga-I3F" eventType="touchUpInside" id="cDF-zn-FqQ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKS-h9-H9L" userLabel="ContributeView">
+                                <rect key="frame" x="0.0" y="436" width="600" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" À ton tour, nous avons hâte de te lire" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="HmS-ki-7th">
+                                        <rect key="frame" x="130" y="8" width="340" height="15"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-PU-ZMH" userLabel="AddIdeaView">
+                                        <rect key="frame" x="180" y="31" width="240" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boe-ex-ui7" customClass="RoundedButton" customModule="DaveoIdeaBox" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="8" width="45" height="45"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="7q8-xW-iiV"/>
+                                                    <constraint firstAttribute="width" constant="45" id="yfP-fS-9GL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="5DM-wn-dSQ" kind="show" identifier="entryViewControllerDismissed" id="Xy0-n2-VVo"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TON IDÉE…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="aGN-wA-JRN">
+                                                <rect key="frame" x="61" y="8" width="171" height="44"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="1Ls-e4-VLu"/>
+                                            <constraint firstItem="aGN-wA-JRN" firstAttribute="top" secondItem="N2Q-PU-ZMH" secondAttribute="top" constant="8" id="JVg-Rh-HYE"/>
+                                            <constraint firstAttribute="trailing" secondItem="aGN-wA-JRN" secondAttribute="trailing" constant="8" id="KOi-B8-smd"/>
+                                            <constraint firstItem="aGN-wA-JRN" firstAttribute="leading" secondItem="boe-ex-ui7" secondAttribute="trailing" constant="16" id="Rvn-W8-RMw"/>
+                                            <constraint firstItem="boe-ex-ui7" firstAttribute="leading" secondItem="N2Q-PU-ZMH" secondAttribute="leading" constant="8" id="Zo9-MB-3Ms"/>
+                                            <constraint firstItem="boe-ex-ui7" firstAttribute="centerY" secondItem="N2Q-PU-ZMH" secondAttribute="centerY" id="pUD-fI-yHN"/>
+                                            <constraint firstAttribute="bottom" secondItem="aGN-wA-JRN" secondAttribute="bottom" constant="8" id="sWv-aH-T8I"/>
+                                            <constraint firstAttribute="height" constant="60" id="xPj-AS-ANe"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Zex-en-yPr" appends="YES" id="KXK-Yf-x52"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.1960784314" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="N2Q-PU-ZMH" firstAttribute="centerX" secondItem="xKS-h9-H9L" secondAttribute="centerX" id="8OG-ah-hJC"/>
+                                    <constraint firstAttribute="height" constant="100" id="CEk-Cd-GSp"/>
+                                    <constraint firstAttribute="bottom" secondItem="N2Q-PU-ZMH" secondAttribute="bottom" constant="9" id="THt-f1-pr0"/>
+                                    <constraint firstItem="HmS-ki-7th" firstAttribute="top" secondItem="xKS-h9-H9L" secondAttribute="top" constant="8" id="cki-ck-Tpb"/>
+                                    <constraint firstItem="HmS-ki-7th" firstAttribute="centerX" secondItem="xKS-h9-H9L" secondAttribute="centerX" id="fqw-RN-ei3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.83921568627450982" green="0.85882352941176465" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,7 +311,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="hgw-S2-8iD"/>
-                                <exclude reference="xKS-h9-H9L"/>
                                 <exclude reference="EIA-nb-pAJ"/>
                                 <exclude reference="hnD-YK-lOC"/>
                                 <exclude reference="hbZ-Rc-iIg"/>
@@ -320,6 +319,7 @@
                                 <exclude reference="tEI-TQ-kVF"/>
                                 <exclude reference="4ml-6P-0Zr"/>
                                 <exclude reference="OIq-Mb-hgn"/>
+                                <exclude reference="xKS-h9-H9L"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="r44-lx-glA"/>
@@ -358,7 +358,6 @@
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="hgw-S2-8iD"/>
-                                <include reference="xKS-h9-H9L"/>
                                 <include reference="EIA-nb-pAJ"/>
                                 <include reference="hnD-YK-lOC"/>
                                 <include reference="hbZ-Rc-iIg"/>
@@ -367,6 +366,7 @@
                                 <include reference="tEI-TQ-kVF"/>
                                 <include reference="4ml-6P-0Zr"/>
                                 <include reference="OIq-Mb-hgn"/>
+                                <include reference="xKS-h9-H9L"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="r44-lx-glA"/>
@@ -478,7 +478,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFU-aD-CtK" userLabel="ContributeView">
                                 <rect key="frame" x="0.0" y="436" width="600" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VOUS AUSSI, DITES NOUS COMMENT AMELIORER DAVEO !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="6eq-dk-KHL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" À ton tour, nous avons hâte de te lire" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="6eq-dk-KHL">
                                         <rect key="frame" x="130" y="8" width="340" height="15"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -509,7 +509,7 @@
                                                     <segue destination="5DM-wn-dSQ" kind="show" identifier="submitEntryView" id="6Tg-5X-6sP"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROPOSER UNE IDÉE…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-fJ-Ynf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TON IDÉE…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-fJ-Ynf">
                                                 <rect key="frame" x="61" y="8" width="171" height="44"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -525,10 +525,10 @@
                                             <constraint firstAttribute="bottom" secondItem="rXA-fJ-Ynf" secondAttribute="bottom" constant="8" id="LID-y7-ZiN"/>
                                             <constraint firstItem="kBz-Ma-Vs9" firstAttribute="leading" secondItem="Jif-Nq-tXd" secondAttribute="leading" constant="8" id="LwL-2t-Hmq"/>
                                             <constraint firstAttribute="trailing" secondItem="rXA-fJ-Ynf" secondAttribute="trailing" constant="8" id="T5e-hO-yvv"/>
-                                            <constraint firstAttribute="width" constant="240" id="XvB-Az-quk"/>
+                                            <constraint firstAttribute="width" constant="180" id="XvB-Az-quk"/>
                                             <constraint firstItem="kBz-Ma-Vs9" firstAttribute="centerY" secondItem="Jif-Nq-tXd" secondAttribute="centerY" id="bHi-As-cUP"/>
                                             <constraint firstAttribute="height" constant="60" id="gg6-pY-EFS"/>
-                                            <constraint firstItem="rXA-fJ-Ynf" firstAttribute="leading" secondItem="kBz-Ma-Vs9" secondAttribute="trailing" constant="8" id="j8q-4v-FVB"/>
+                                            <constraint firstItem="rXA-fJ-Ynf" firstAttribute="leading" secondItem="kBz-Ma-Vs9" secondAttribute="trailing" constant="16" id="j8q-4v-FVB"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -569,7 +569,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Idées pour améliorer Daveo !" id="j3K-uF-qvJ"/>
+                    <navigationItem key="navigationItem" title="Vos idées pour faire grandir Daveo" id="j3K-uF-qvJ"/>
                     <connections>
                         <outlet property="addIdeaView" destination="Jif-Nq-tXd" id="TqG-DT-c9z"/>
                         <outlet property="contributeView" destination="pFU-aD-CtK" id="SEa-o7-OJt"/>
@@ -855,13 +855,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merci,  c'est sympa d'avoir participé !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpi-4B-Ze0">
-                                <rect key="frame" x="128" y="142" width="345" height="66"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgY-c3-8SR">
                                 <rect key="frame" x="180" y="306" width="240" height="50"/>
                                 <animations/>
@@ -879,6 +872,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="280" y="391" width="240" height="50"/>
+                                </variation>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgi-Xx-8zD" customClass="FaceView" customModule="DaveoIdeaBox" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -918,7 +914,7 @@
                                     <constraint firstAttribute="width" constant="250" id="aCO-TP-dnd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="RETOUR VUE PRINCIPALE">
+                                <state key="normal" title="PAGE D'ACCUEIL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -930,6 +926,13 @@
                                     <segue destination="hFe-wg-m2G" kind="unwind" identifier="submitCompletedViewControllerDismissed" unwindAction="submitCompletedViewControllerDismissed:" id="NxC-kQ-yVR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merci pour avoir partagé cette nouvelle idée" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpi-4B-Ze0">
+                                <rect key="frame" x="128" y="142" width="345" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.24744749690000001" green="0.5921884624" blue="0.18896185709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.8980392157" green="0.90980392160000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1055,7 +1058,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue chez Daveo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26S-eJ-7tg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue sur l'application GROWTH HACKER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26S-eJ-7tg">
                                 <rect key="frame" x="128" y="142" width="345" height="66"/>
                                 <animations/>
                                 <constraints>
@@ -1237,7 +1240,7 @@
                                                     </mask>
                                                 </variation>
                                             </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre humeur" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kR9-he-ucM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ton humeur du jour :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kR9-he-ucM">
                                                 <rect key="frame" x="68" y="8" width="452" height="50"/>
                                                 <animations/>
                                                 <constraints>
@@ -1253,8 +1256,11 @@
                                                         <exclude reference="KDU-lB-y4o"/>
                                                     </mask>
                                                 </variation>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="170" y="267" width="192" height="50"/>
+                                                </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thème de l'idée" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIk-f2-d1N">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisis la thématique : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIk-f2-d1N">
                                                 <rect key="frame" x="68" y="8" width="452" height="50"/>
                                                 <animations/>
                                                 <constraints>
@@ -1294,6 +1300,9 @@
                                                         <color key="value" red="0.8980392157" green="0.90980392160000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="102" y="267" width="50" height="50"/>
+                                                </variation>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfc-Na-q7t" userLabel="FaceView indicator">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1435,6 +1444,13 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fIR-fA-SC6">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <animations/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="676" y="496" width="118" height="31"/>
+                                        </variation>
+                                    </slider>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -1470,6 +1486,7 @@
                                     <mask key="subviews">
                                         <exclude reference="N1c-uB-tGn"/>
                                         <exclude reference="IzD-3c-FnV"/>
+                                        <exclude reference="fIR-fA-SC6"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="TFZ-Qt-DlO"/>
@@ -1489,10 +1506,12 @@
                                         <exclude reference="Swc-3z-4X0"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="8" width="800" height="698"/>
                                     <mask key="subviews">
                                         <include reference="N1c-uB-tGn"/>
                                         <include reference="IzD-3c-FnV"/>
+                                        <include reference="fIR-fA-SC6"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="TFZ-Qt-DlO"/>
@@ -1596,7 +1615,8 @@
                                         <exclude reference="g4L-Q9-sav"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="606" width="800" height="100"/>
                                     <mask key="constraints">
                                         <include reference="hG2-6n-CUL"/>
                                         <exclude reference="mka-dv-Keh"/>
@@ -1694,7 +1714,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnZ-c6-XQ9">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C'est à votre tour de proposer quelque chose !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reb-vb-K2s">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laisse ton esprit s'exprimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reb-vb-K2s">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -2052,7 +2072,8 @@
                                         <exclude reference="yMP-fT-Wyx"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="8" width="800" height="690"/>
                                     <mask key="subviews">
                                         <include reference="reb-vb-K2s"/>
                                         <include reference="rqY-fK-4VV"/>
@@ -2154,7 +2175,8 @@
                                         <exclude reference="ka6-f7-F1r"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="606" width="800" height="100"/>
                                     <mask key="constraints">
                                         <exclude reference="dzV-py-pXe"/>
                                         <include reference="fbY-tD-HRA"/>
