@@ -11,7 +11,11 @@ import UIKit
 @IBDesignable
 class RoundedButton: UIButton {
     
-    @IBInspectable var fillColor: UIColor = UIColor.whiteColor()
+    @IBInspectable var fillColor: UIColor = UIColor.whiteColor() {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     @IBInspectable var borderColor:UIColor = UIColor.redColor()
     @IBInspectable var borderWidth:CGFloat = 5.0
@@ -22,7 +26,6 @@ class RoundedButton: UIButton {
         let path = UIBezierPath(ovalInRect: rect)
         fillColor.setFill()
         path.fill()
-
         
         if (drawBorder) {
             layer.cornerRadius = frame.size.width/2

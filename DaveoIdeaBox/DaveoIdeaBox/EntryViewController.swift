@@ -13,6 +13,8 @@ class EntryViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var creationDateLabel: UILabel!
     @IBOutlet weak var thumbUpCount: UILabel!
+    @IBOutlet weak var thumbUpCountButton: RoundedButton!
+    
     @IBOutlet weak var ideaThemedImageView: UIImageView!
 
     @IBOutlet weak var authorButton: UIButton!
@@ -69,9 +71,15 @@ class EntryViewController: UIViewController {
             creationDateLabel?.text = makeCreationDateLabelText(loadedEntry.creationDate)
             thumbUpCount?.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
             
-            let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
-            let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
-            let image = UIImage(named: imagesNamed[randomIndex])
+            var image: UIImage?
+            if let imageNamed = loadedEntry.preferedImageTheme {
+                image = UIImage(named: imageNamed)
+            }
+            else {
+                let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
+                let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
+                image = UIImage(named: imagesNamed[randomIndex])
+            }
             
             ideaThemedImageView?.image = image
             ideaThemedImageView?.contentMode = .ScaleAspectFill
@@ -82,8 +90,21 @@ class EntryViewController: UIViewController {
         // Model mechanism
         entry?.thumbUpCount = (entry?.thumbUpCount)! + 1
         
+        // Locking the vote button for 1 min
+        thumbUpCountButton.enabled = false
+        let oldColor = thumbUpCountButton.fillColor
+        thumbUpCountButton.fillColor = UIColor.grayColor()
+        performSelector("unlockThumbUpCountButton:", withObject: oldColor, afterDelay: 60.0)
+        
         // GUI mechanism
         setupGUI()
+    }
+    
+    func unlockThumbUpCountButton(oldColor: AnyObject) {
+        thumbUpCountButton.enabled = true
+        if let color = oldColor as? UIColor {
+            thumbUpCountButton.fillColor = color
+        }
     }
     
     @IBAction func deleteEntryButtonTouchUpInside(sender: AnyObject) {

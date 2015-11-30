@@ -24,6 +24,8 @@ class EntriesCollectionViewController: UICollectionViewController {
         }
     }
     
+    var recentlyCreatedEntry: Idea?
+    
     func entryForIndexPath(indexPath: NSIndexPath) -> Idea {
         // var section = indexPath.section;
         // var row = indexPath.row;
@@ -33,7 +35,7 @@ class EntriesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //EntryManager.sharedInstance.createRandomEntries()
+        EntryManager.sharedInstance.createRandomEntries()
 
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = true
@@ -50,7 +52,7 @@ class EntriesCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         if self.isViewAppearedOnce {
-            self.entriesCollectionView.reloadData()
+            //self.entriesCollectionView.reloadData()
         }
         
         // Yes, viewDidLoad was called once
@@ -73,7 +75,21 @@ class EntriesCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func submitCompletedViewControllerDismissed(segue:UIStoryboardSegue) {
-        // Here I could gather back the recently created entry
+        
+        
+        if let cells = collectionView?.visibleCells() {
+            for cell in cells {
+                if let entryCell = cell as? EntryCollectionViewCell {
+                    print(entryCell.authorLabel)
+                }
+            }
+        }
+        
+        // Here I gather back the recently created entry
+        
+        
+        //collectionView?.scrollToItemAtIndexPath(NSIndexPath(forRow: 3, inSection: 1), atScrollPosition: .Top, animated: true)
+        print("entry \(recentlyCreatedEntry)")
     }
 
     // MARK: UICollectionViewDataSource

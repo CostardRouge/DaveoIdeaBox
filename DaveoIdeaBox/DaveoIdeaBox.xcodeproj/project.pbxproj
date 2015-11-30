@@ -331,7 +331,7 @@
 				INFOPLIST_FILE = DaveoIdeaBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox";
+				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox.LoungeDaveoiPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -347,7 +347,7 @@
 				INFOPLIST_FILE = DaveoIdeaBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox";
+				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox.LoungeDaveoiPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};

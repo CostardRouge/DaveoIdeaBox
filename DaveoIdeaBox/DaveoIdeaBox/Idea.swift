@@ -26,14 +26,15 @@ class Idea: Serializable {
         var imagesNamed = [[String]](count: Idea.themes.count, repeatedValue: ["+", "+"])
         
         
-        imagesNamed.insert(["technology_0", "technology_1"], atIndex: Theme.Technology.hashValue)
-        imagesNamed.insert(["innovation_0"], atIndex: Theme.Innovation.hashValue)
+        // imagesNamed.insert(["business_0"], atIndex: Theme.Responsive.hashValue)
+        // imagesNamed.insert(["development_0", "development_1"], atIndex: Theme.Development.hashValue)
+        // imagesNamed.insert(["technology_0", "technology_1"], atIndex: Theme.Technology.hashValue)
+        
+        imagesNamed.insert(["innovation_0", "technology_0", "technology_1"], atIndex: Theme.Innovation.hashValue)
         imagesNamed.insert(["office_0"], atIndex: Theme.HumanRessource.hashValue)
-        imagesNamed.insert(["development_0", "development_1"], atIndex: Theme.Development.hashValue)
         imagesNamed.insert(["selfcare_0", "selfcare_1"], atIndex: Theme.Selfcare.hashValue)
         imagesNamed.insert(["party_0", "party_1"], atIndex: Theme.Party.hashValue)
         imagesNamed.insert(["travel_0", "travel_1"], atIndex: Theme.Travel.hashValue)
-        imagesNamed.insert(["business_0"], atIndex: Theme.Responsive.hashValue)
         imagesNamed.insert(["other_0", "other_1"], atIndex: Theme.Other.hashValue)
         
         return imagesNamed[hashValue]
@@ -50,13 +51,14 @@ class Idea: Serializable {
     
     static let themes: [themeDefinition] = [
         //(id: Theme.Technology, printableName: "Technologie", preferedColor: UIColor.redColor()),
+        //(id: Theme.Development, printableName: "Developpement", preferedColor: UIColor.redColor()),
+        //(id: Theme.Responsive, printableName: "Buisness responsive", preferedColor: UIColor.redColor()),
+        
         (id: Theme.Innovation, printableName: "Projet d'innovation", preferedColor: UIColor.redColor()),
         (id: Theme.HumanRessource, printableName: "Ressources humaines", preferedColor: UIColor.redColor()),
-        //(id: Theme.Development, printableName: "Developpement", preferedColor: UIColor.redColor()),
-        (id: Theme.Selfcare, printableName: "Well being", preferedColor: UIColor.redColor()),
+        (id: Theme.Selfcare, printableName: "Bien-être", preferedColor: UIColor.redColor()),
         (id: Theme.Party, printableName: "Événement", preferedColor: UIColor.redColor()),
         (id: Theme.Travel, printableName: "Voyage", preferedColor: UIColor.redColor()),
-        //(id: Theme.Responsive, printableName: "Buisness responsive", preferedColor: UIColor.redColor()),
         (id: Theme.Other, printableName: "Nouveau thème", preferedColor: UIColor.redColor())
     ]
     
@@ -76,21 +78,34 @@ class Idea: Serializable {
         authorName = String()
         authorEmail = String()
         creationDate = NSDate()
+        lastVoteDate = NSDate()
         thumbUpCount = 0
     }
     
     // Attributes
     var id: String
     
-    var theme: Int
+    var theme: Int {
+        didSet {
+            let imagesNamed = Idea().getThemeImageNamesFor(self.theme) // should be optionnal
+            let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
+            self.preferedImageTheme = imagesNamed[randomIndex]
+        }
+    }
+    
     var mood: Int
+    var preferedImageTheme: String?
     
     var content: String
     var authorName: String
     var authorEmail: String
     var creationDate: NSDate
-    var thumbUpCount: Int
+    var lastVoteDate: NSDate
     
     var modificationDate: NSDate?
-    var preferedThemedImageName: String?
+    var thumbUpCount: Int {
+        didSet {
+            lastVoteDate = NSDate()
+        }
+    }
 }

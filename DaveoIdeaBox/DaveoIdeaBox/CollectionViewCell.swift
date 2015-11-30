@@ -14,6 +14,7 @@ class EntryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var ideaThemedImageView: UIImageView!
     @IBOutlet weak var thumbUpCountButton: RoundedButton!
+    @IBOutlet weak var thumbUpCountUpButton: RoundedButton!
     
     // Attributes
     var entry: Idea? {
@@ -26,7 +27,15 @@ class EntryCollectionViewCell: UICollectionViewCell {
         if let loadedEntry = entry {
             loadedEntry.thumbUpCount = loadedEntry.thumbUpCount + 1
             entry = loadedEntry
+            
+            // Locking the cell vote button for 1 min
+            thumbUpCountUpButton.enabled = false
+            performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: 60.0)
         }
+    }
+    
+    func unlockThumbUpCountButton() {
+        thumbUpCountUpButton.enabled = true
     }
     
     func updateUI() {
@@ -35,11 +44,16 @@ class EntryCollectionViewCell: UICollectionViewCell {
             authorLabel?.text = loadedEntry.authorName.capitalizedString
             thumbUpCountButton.setTitle("\(loadedEntry.thumbUpCount)", forState: .Normal)
             
+            var image: UIImage?
+            if let imageNamed = loadedEntry.preferedImageTheme {
+                image = UIImage(named: imageNamed)
+            }
+            else {
+                let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
+                let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
+                 image = UIImage(named: imagesNamed[randomIndex])
+            }
             
-            let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
-            let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
-            
-            let image = UIImage(named: imagesNamed[randomIndex])
             //image = image?.applyBlurWithRadius(CGFloat(1), tintColor: nil, saturationDeltaFactor: 1.0)
        
             ideaThemedImageView?.image = image

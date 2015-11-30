@@ -157,14 +157,19 @@ class EntryManager {
                             
                             entry.id = item["id"]! as! String
                             entry.authorName = item["authorName"]! as! String
+                            entry.preferedImageTheme = item["preferedImageTheme"]! as? String
+                            
                             entry.authorEmail = item["authorEmail"]! as! String
                             entry.content = item["content"]! as! String
                             entry.thumbUpCount = item["thumbUpCount"]! as! Int
                             entry.mood = item["mood"]! as! Int
                             entry.theme = item["theme"]! as! Int
                             
-                            let creationDate = item["creationDate"]! as! Double
-                            entry.creationDate = NSDate(timeIntervalSince1970: creationDate)
+                            let creationDateInDouble = item["creationDate"]! as! Double
+                            entry.creationDate = NSDate(timeIntervalSince1970: creationDateInDouble)                            
+                
+                            let lastVoteDateInDouble = item["lastVoteDate"]! as! Double
+                            entry.lastVoteDate = NSDate(timeIntervalSince1970: lastVoteDateInDouble)
                             
                             //let entry.modificationDate = item["entry.modificationDate"]! as! Double
                             //entry.modificationDate = NSDate(timeIntervalSince1970: entry.modificationDate)

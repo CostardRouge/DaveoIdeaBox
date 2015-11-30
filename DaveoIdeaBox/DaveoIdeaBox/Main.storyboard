@@ -413,6 +413,7 @@
                         <outlet property="ideaThemedImageView" destination="hgw-S2-8iD" id="7uL-l3-Re3"/>
                         <outlet property="themeButton" destination="iTh-dF-m9H" id="hrq-d5-dhx"/>
                         <outlet property="thumbUpCount" destination="4ml-6P-0Zr" id="taM-8I-E9v"/>
+                        <outlet property="thumbUpCountButton" destination="hbZ-Rc-iIg" id="cJn-xZ-LVk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21D-fa-buo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -478,14 +479,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFU-aD-CtK" userLabel="ContributeView">
                                 <rect key="frame" x="0.0" y="436" width="600" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" À ton tour, nous avons hâte de te lire" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="6eq-dk-KHL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" À ton tour, nous avons hâte de te lire" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="6eq-dk-KHL">
                                         <rect key="frame" x="130" y="8" width="340" height="15"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <color key="textColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jif-Nq-tXd" userLabel="AddIdeaView">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jif-Nq-tXd" userLabel="AddIdeaView">
                                         <rect key="frame" x="180" y="31" width="240" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBz-Ma-Vs9" customClass="RoundedButton" customModule="DaveoIdeaBox" customModuleProvider="target">
@@ -509,7 +510,7 @@
                                                     <segue destination="5DM-wn-dSQ" kind="show" identifier="submitEntryView" id="6Tg-5X-6sP"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TON IDÉE…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-fJ-Ynf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TON IDÉE…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-fJ-Ynf">
                                                 <rect key="frame" x="61" y="8" width="171" height="44"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -815,6 +816,7 @@
                                     <outlet property="contentLabel" destination="WYl-Mb-lWf" id="LMF-xc-UX9"/>
                                     <outlet property="ideaThemedImageView" destination="U3b-bW-71U" id="T35-6b-Q0j"/>
                                     <outlet property="thumbUpCountButton" destination="40L-Fc-FbG" id="vem-wn-A4r"/>
+                                    <outlet property="thumbUpCountUpButton" destination="Ve3-qG-Hja" id="sPe-Su-gzJ"/>
                                     <segue destination="5O5-ga-I3F" kind="show" identifier="showEntryDetail" id="XQu-Oj-Apo"/>
                                 </connections>
                             </collectionViewCell>
@@ -926,7 +928,7 @@
                                     <segue destination="hFe-wg-m2G" kind="unwind" identifier="submitCompletedViewControllerDismissed" unwindAction="submitCompletedViewControllerDismissed:" id="NxC-kQ-yVR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merci pour avoir partagé cette nouvelle idée" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpi-4B-Ze0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Merci pour avoir partagé cette nouvelle idée" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpi-4B-Ze0">
                                 <rect key="frame" x="128" y="142" width="345" height="66"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -1256,9 +1258,6 @@
                                                         <exclude reference="KDU-lB-y4o"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="170" y="267" width="192" height="50"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisis la thématique : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIk-f2-d1N">
                                                 <rect key="frame" x="68" y="8" width="452" height="50"/>
@@ -1300,9 +1299,6 @@
                                                         <color key="value" red="0.8980392157" green="0.90980392160000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="102" y="267" width="50" height="50"/>
-                                                </variation>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfc-Na-q7t" userLabel="FaceView indicator">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1506,8 +1502,7 @@
                                         <exclude reference="Swc-3z-4X0"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="8" width="800" height="698"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <include reference="N1c-uB-tGn"/>
                                         <include reference="IzD-3c-FnV"/>
@@ -1615,8 +1610,7 @@
                                         <exclude reference="g4L-Q9-sav"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="606" width="800" height="100"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="hG2-6n-CUL"/>
                                         <exclude reference="mka-dv-Keh"/>
@@ -2072,8 +2066,7 @@
                                         <exclude reference="yMP-fT-Wyx"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="8" width="800" height="690"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <include reference="reb-vb-K2s"/>
                                         <include reference="rqY-fK-4VV"/>
@@ -2175,8 +2168,7 @@
                                         <exclude reference="ka6-f7-F1r"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="606" width="800" height="100"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <exclude reference="dzV-py-pXe"/>
                                         <include reference="fbY-tD-HRA"/>
