@@ -35,7 +35,7 @@ class EntriesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EntryManager.sharedInstance.createRandomEntries()
+        //EntryManager.sharedInstance.createRandomEntries()
 
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = true
@@ -104,7 +104,7 @@ class EntriesCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EntryCollectionViewCell
-    
+        
         // Configure the cell
         let entry = entryForIndexPath(indexPath)
         cell.entry = entry

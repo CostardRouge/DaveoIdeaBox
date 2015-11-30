@@ -12,6 +12,7 @@
 		2422DAF01BF8F44D00C0DFF9 /* Array+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */; };
 		2422DAF41BF929BD00C0DFF9 /* SubmitCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */; };
 		24333A7D1BFF2A6400FB9FCE /* ScreenSaverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */; };
+		246652031C0C6CA90046C26C /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */; };
 		2476E3001BF8175200C4CFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */; };
 		2476E3031BF8175200C4CFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2476E3011BF8175200C4CFA2 /* LaunchScreen.storyboard */; };
 		2476E30B1BF817D800C4CFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E30A1BF817D800C4CFA2 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Serializable.swift"; sourceTree = "<group>"; };
 		2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubmitCompletedViewController.swift; path = ../SubmitCompletedViewController.swift; sourceTree = "<group>"; };
 		24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSaverViewController.swift; sourceTree = "<group>"; };
+		246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2476E2F51BF8175200C4CFA2 /* DaveoIdeaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2476E3021BF8175200C4CFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */,
-				24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */,
+				246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */,
 				2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */,
 				2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */,
 				2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */,
@@ -113,6 +115,9 @@
 		2476E3101BF8180900C4CFA2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2422DAED1BF8F06100C0DFF9 /* Serializable.swift */,
+				2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */,
+				24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */,
 				2476E31C1BF8183C00C4CFA2 /* FaceView.swift */,
 				2476E30C1BF8180100C4CFA2 /* EntryTileView.swift */,
 				2476E30D1BF8180100C4CFA2 /* RoundedButton.swift */,
@@ -125,8 +130,6 @@
 			children = (
 				2476E3131BF8183400C4CFA2 /* Idea.swift */,
 				2422DAEB1BF8B8C000C0DFF9 /* EntryManager.swift */,
-				2422DAED1BF8F06100C0DFF9 /* Serializable.swift */,
-				2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				2422DAEE1BF8F06100C0DFF9 /* Serializable.swift in Sources */,
 				24333A7D1BFF2A6400FB9FCE /* ScreenSaverViewController.swift in Sources */,
 				2422DAF41BF929BD00C0DFF9 /* SubmitCompletedViewController.swift in Sources */,
+				246652031C0C6CA90046C26C /* ThemeCollectionViewCell.swift in Sources */,
 				2422DAEC1BF8B8C000C0DFF9 /* EntryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

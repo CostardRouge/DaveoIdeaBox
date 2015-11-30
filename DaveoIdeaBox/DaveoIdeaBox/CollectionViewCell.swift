@@ -51,7 +51,7 @@ class EntryCollectionViewCell: UICollectionViewCell {
             else {
                 let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
                 let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
-                 image = UIImage(named: imagesNamed[randomIndex])
+                image = UIImage(named: imagesNamed[randomIndex])
             }
             
             //image = image?.applyBlurWithRadius(CGFloat(1), tintColor: nil, saturationDeltaFactor: 1.0)

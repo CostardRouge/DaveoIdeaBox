@@ -14,7 +14,8 @@ class Idea: Serializable {
     typealias moodDefinition = (id: Mood, printableName: String, preferedColor: UIColor)
 
     enum Theme {
-        case Technology, Innovation, HumanRessource, Development, Selfcare, Party, Travel, Responsive, Other
+        //case Technology, Innovation, HumanRessource, Development, Selfcare, Party, Travel, Responsive, Other
+        case Innovation, HumanRessource, Selfcare, Party, Travel, Other
     }
     
     enum Mood: Int {
@@ -23,8 +24,7 @@ class Idea: Serializable {
     
     func getThemeImageNamesFor(hashValue: Int) -> [String] {
         
-        var imagesNamed = [[String]](count: Idea.themes.count, repeatedValue: ["+", "+"])
-        
+        var imagesNamed = [[String]](count: Idea.themes.count, repeatedValue: [""])
         
         // imagesNamed.insert(["business_0"], atIndex: Theme.Responsive.hashValue)
         // imagesNamed.insert(["development_0", "development_1"], atIndex: Theme.Development.hashValue)
@@ -59,7 +59,7 @@ class Idea: Serializable {
         (id: Theme.Selfcare, printableName: "Bien-être", preferedColor: UIColor.redColor()),
         (id: Theme.Party, printableName: "Événement", preferedColor: UIColor.redColor()),
         (id: Theme.Travel, printableName: "Voyage", preferedColor: UIColor.redColor()),
-        (id: Theme.Other, printableName: "Nouveau thème", preferedColor: UIColor.redColor())
+        (id: Theme.Other, printableName: "Nouvelle thèmatique", preferedColor: UIColor.redColor())
     ]
     
     static let moods: [moodDefinition] = [

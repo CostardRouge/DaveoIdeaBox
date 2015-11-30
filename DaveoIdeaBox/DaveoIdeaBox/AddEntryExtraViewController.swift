@@ -8,15 +8,18 @@
 
 import UIKit
 
+private let reuseIdentifier = "EntryThemeChoice"
 let daveoGreenColor = UIColor(red: 0, green: 0.501961, blue: 0, alpha: 1)
 let daveoBlueColor = UIColor(red: 0, green: 0.490196, blue: 0.713726, alpha: 1)
 
-class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
+class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     // Outlets
     @IBOutlet weak var entryThemePickerView: UIPickerView!
     @IBOutlet weak var entryMoodFaceView: FaceView!
     @IBOutlet weak var faceViewIndicatorLabel: UILabel!
+    @IBOutlet weak var themesCollectionView: UICollectionView!
+    @IBOutlet weak var allGoodLabel: UILabel!
     
     // Attributes
     var entry: Idea?
@@ -24,7 +27,7 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
     var pickerData = Idea.themes
     
     // Faceview happiness value
-    var happiness: Int = 100 {
+    var happiness: Int = 80 {
         didSet {
             happiness = min(max(happiness, 0), 100)
             entryMoodFaceView?.setNeedsDisplay()
@@ -40,6 +43,12 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Theme collection view
+        themesCollectionView?.dataSource = self
+        themesCollectionView?.delegate = self
+        themesCollectionView.allowsSelection = true
+        themesCollectionView.allowsMultipleSelection = false
+        
         // FaceView
         updateFaceViewIndicator()
         entryMoodFaceView?.dataSource = self
@@ -50,6 +59,11 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
         
         // Select defaut picker view choice
         entryThemePickerView?.selectRow(4, inComponent: 0, animated: false)
+        
+        // Update all good label
+        if let loadedEntry = entry {
+            allGoodLabel?.text = String(format: "%@, TOUT EST BON ?", loadedEntry.authorName.uppercaseString)
+        }
     }
     
     func updateFaceViewIndicator() {
@@ -178,4 +192,55 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
     func smilinessForFaceView(sender: FaceView) -> Double? {
         return Double(happiness - 50) / 50
     }
+    
+    func collectionView(themesCollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Idea.themes.count
+    }
+    
+    func numberOfSectionsInCollectionView(themesCollectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(themesCollectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = themesCollectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ThemeCollectionViewCell
+        
+        // Configure the cell
+        let themeDefinition = themeDefinitionForIndexPath(indexPath)
+        cell.themeDefinition = themeDefinition
+        
+        return cell
+    }
+    
+    func themeDefinitionForIndexPath(indexPath: NSIndexPath) -> Idea.themeDefinition {
+        return Idea.themes[indexPath.row]
+    }
+    
+    // MARK: UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) {
+            cell.layer.borderColor = UIColor.blueColor().CGColor
+            cell.layer.borderWidth = 4.0
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) {
+            cell.layer.borderWidth = 0.0
+        }
+    }
+    
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) {
+//            cell.layer.borderColor = UIColor.blueColor().CGColor
+//            cell.layer.borderWidth = 4.0
+//        }
+//    }
 }
