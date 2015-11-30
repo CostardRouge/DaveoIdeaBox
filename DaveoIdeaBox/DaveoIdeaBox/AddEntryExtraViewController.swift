@@ -15,7 +15,6 @@ let daveoBlueColor = UIColor(red: 0, green: 0.490196, blue: 0.713726, alpha: 1)
 class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     // Outlets
-    @IBOutlet weak var entryThemePickerView: UIPickerView!
     @IBOutlet weak var entryMoodFaceView: FaceView!
     @IBOutlet weak var faceViewIndicatorLabel: UILabel!
     @IBOutlet weak var themesCollectionView: UICollectionView!
@@ -52,13 +51,6 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
         // FaceView
         updateFaceViewIndicator()
         entryMoodFaceView?.dataSource = self
-        
-        // Add choice to picker view
-        entryThemePickerView?.delegate = self
-        entryThemePickerView?.dataSource = self
-        
-        // Select defaut picker view choice
-        entryThemePickerView?.selectRow(4, inComponent: 0, animated: false)
         
         // Update all good label
         if let loadedEntry = entry {
@@ -100,9 +92,14 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
         
         if let loadedEntry = entry {
             // Filling our entry object
-            if let selectedRow = entryThemePickerView?.selectedRowInComponent(0) {
+            
+            if let indexPaths = themesCollectionView.indexPathsForSelectedItems() {
                 // Setting selected theme
-                loadedEntry.theme = pickerData[selectedRow].id.hashValue
+                
+                let selectedIndexPath : NSIndexPath = indexPaths[0] as NSIndexPath
+                let selectedThemeDefinition = themeDefinitionForIndexPath(selectedIndexPath)
+                
+                loadedEntry.theme = selectedThemeDefinition.id.hashValue
                 
                 // Setting user mood
                 if happiness <= Idea.Mood.Upset.rawValue {
@@ -207,6 +204,7 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
         // Configure the cell
         let themeDefinition = themeDefinitionForIndexPath(indexPath)
         cell.themeDefinition = themeDefinition
+        //cell.tag = themeDefinition.id.hashValue
         
         return cell
     }
