@@ -14,7 +14,7 @@ struct NotificationIdentifiers {
 }
 
 struct ScreenSaverSettings {
-    static let timeBeforeActivation = 60.0
+    static let timeBeforeActivation = 300.0
 }
 
 @UIApplicationMain
