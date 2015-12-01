@@ -21,7 +21,7 @@ struct TimeIntervals {
     static let nextAllowedVoteAfter = 60.0
     
     struct ScreenSaver {
-        static let timeBeforeActivation = 300.0
+        static let timeBeforeActivation = 300.0// - 297.0
     }
 }
 

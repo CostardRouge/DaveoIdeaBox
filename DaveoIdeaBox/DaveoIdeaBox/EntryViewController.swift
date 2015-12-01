@@ -21,6 +21,8 @@ class EntryViewController: UIViewController {
     @IBOutlet weak var themeButton: UIButton!
     
     @IBOutlet weak var deleteEntryButton: RoundedButton!
+
+    @IBOutlet weak var scrollViewForImageView: UIScrollView!
     
     // Attributes
     var entry: Idea? {
@@ -65,7 +67,7 @@ class EntryViewController: UIViewController {
             let nextAllowedVoteDate = loadedEntry.lastVoteDate.dateByAddingTimeInterval(TimeIntervals.nextAllowedVoteAfter)
             let nowDateTimeIntervalSince1970 = NSDate().timeIntervalSince1970
             if nextAllowedVoteDate.timeIntervalSince1970 < nowDateTimeIntervalSince1970 {
-                //unlockThumbUpCountButton()
+                unlockThumbUpCountButton()
             }
             else {
                 lockThumbUpCountButton()
@@ -76,7 +78,7 @@ class EntryViewController: UIViewController {
             contentTextView?.text = loadedEntry.content
             authorButton?.setTitle(loadedEntry.authorName.uppercaseString, forState: .Normal)
             
-            if let themeName = Idea().getThemePrintableNameFor(loadedEntry.theme) {
+            if let themeName = Idea.getThemePrintableNameFor(loadedEntry.theme) {
                 themeButton?.setTitle(themeName.uppercaseString, forState: .Normal)
             }
             
@@ -89,20 +91,23 @@ class EntryViewController: UIViewController {
                 image = UIImage(named: imageNamed)
             }
             else {
-                let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
+                let imagesNamed = Idea.getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
                 let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
                 image = UIImage(named: imagesNamed[randomIndex])
             }
             
             ideaThemedImageView?.image = image
             ideaThemedImageView?.contentMode = .ScaleAspectFill
+            
+            if let image = ideaThemedImageView?.image {
+                let heightOffset = image.size.height / 2.0
+                scrollViewForImageView?.contentSize = image.size
+                scrollViewForImageView?.contentOffset = CGPoint(x: 0.0, y: heightOffset)
+            }
         }
     }
     
     @IBAction func thumbUpTouchUpInside(sender: UIButton) {
-        // Very bad...
-        EntryManager().postEntriesUpdatedNotification()
-        
         // Model mechanism
         entry?.thumbUpCount = (entry?.thumbUpCount)! + 1
         
@@ -112,6 +117,9 @@ class EntryViewController: UIViewController {
         
         // GUI mechanism
         setupGUI()
+        
+        // Very bad...
+        EntryManager().postEntriesUpdatedNotification()
     }
     
     func lockThumbUpCountButton() {
@@ -123,6 +131,8 @@ class EntryViewController: UIViewController {
         thumbUpCountButton?.enabled = true
         thumbUpCountButton?.fillColor = daveoGreenColor
     }
+    
+    // showManageEntryView
     
     @IBAction func deleteEntryButtonTouchUpInside(sender: AnyObject) {
         print("deleteEntryButtonTouchUpInside")
@@ -147,7 +157,8 @@ class EntryViewController: UIViewController {
     }
     
     @IBAction func secretTapGesture(sender: AnyObject) {
-        deleteEntryButton.hidden = !deleteEntryButton.hidden
+        //deleteEntryButton.hidden = !deleteEntryButton.hidden
+        performSegueWithIdentifier("showManageEntryView", sender: nil)
     }
     
     @IBAction func addIdeaViewHandleTap(sender: UITapGestureRecognizer) {
@@ -158,6 +169,11 @@ class EntryViewController: UIViewController {
         if segue.identifier == "entryViewControllerDismissed" {
             if let aevc = segue.destinationViewController as? AddEntryViewController {
                 aevc.entry = entry!
+            }
+        }
+        else if segue.identifier == "entryViewControllerDismissed" {
+            if let metvc = segue.destinationViewController as? ManageEntryTableViewController {
+                metvc.entry = entry!
             }
         }
     }

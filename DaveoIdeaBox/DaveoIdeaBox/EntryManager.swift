@@ -41,18 +41,21 @@ class EntryManager {
             "In an ideal world this website wouldn’t exist"
         ]
         
-        for var index = 0; index < 32; ++index {
+        for _ in 0...32 {
             let item = Idea()
             
             var arrayIndex = arc4random_uniform(UInt32(authors.count))
             let randomAuthorName = authors[Int(arrayIndex)]
             item.authorName = randomAuthorName
             
+            item.authorEmail = String(format: "%@@daveo.fr", randomAuthorName)
+            
             arrayIndex = arc4random_uniform(UInt32(contents.count))
             let randomContent = contents[Int(arrayIndex)]
             item.content = randomContent
             
             item.creationDate = NSDate()
+            item.lastVoteDate = NSDate(timeIntervalSince1970: item.creationDate.timeIntervalSince1970 - 600.0)
             item.thumbUpCount = Int(0 + arc4random_uniform(UInt32(15)))            
             
             item.mood = Int(arc4random_uniform(UInt32(100)))
@@ -158,13 +161,13 @@ class EntryManager {
                             
                             entry.id = item["id"]! as! String
                             entry.authorName = item["authorName"]! as! String
-                            entry.preferedImageTheme = item["preferedImageTheme"]! as? String
-                            
                             entry.authorEmail = item["authorEmail"]! as! String
+                            
                             entry.content = item["content"]! as! String
                             entry.thumbUpCount = item["thumbUpCount"]! as! Int
                             entry.mood = item["mood"]! as! Int
                             entry.theme = item["theme"]! as! Int
+                            entry.preferedImageTheme = item["preferedImageTheme"]! as? String
                             
                             let creationDateInDouble = item["creationDate"]! as! Double
                             entry.creationDate = NSDate(timeIntervalSince1970: creationDateInDouble)                            
@@ -191,7 +194,7 @@ class EntryManager {
         
         if let sortDemand = needToBeSorted {
             if sortDemand {
-                sortEntries()
+                //sortEntries()
             }
         }
         return entries

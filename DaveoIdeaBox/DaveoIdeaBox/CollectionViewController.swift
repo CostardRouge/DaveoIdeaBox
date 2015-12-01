@@ -37,7 +37,7 @@ class EntriesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //EntryManager.sharedInstance.createRandomEntries()
+        EntryManager.sharedInstance.createRandomEntries()
 
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = true
@@ -63,12 +63,11 @@ class EntriesCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "showEntryDetail" {
-            let indexPath = entriesCollectionView.indexPathForCell(sender as! UICollectionViewCell)
-            let vc = segue.destinationViewController as! EntryViewController
-            let entry = entryForIndexPath(indexPath!)
-            
-            //let cell = sender as! EntryCollectionViewCell
-            vc.entry = entry
+            if let vc = segue.destinationViewController as? EntryViewController {
+                let indexPath = entriesCollectionView.indexPathForCell(sender as! UICollectionViewCell)
+                let entry = entryForIndexPath(indexPath!)
+                vc.entry = entry
+            }
         }
     }
     

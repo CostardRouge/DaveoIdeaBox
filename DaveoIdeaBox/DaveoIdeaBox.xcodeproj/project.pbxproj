@@ -11,7 +11,9 @@
 		2422DAEE1BF8F06100C0DFF9 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAED1BF8F06100C0DFF9 /* Serializable.swift */; };
 		2422DAF01BF8F44D00C0DFF9 /* Array+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */; };
 		2422DAF41BF929BD00C0DFF9 /* SubmitCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */; };
+		2428F43C1C0DB48200D7CB30 /* ManageEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428F43B1C0DB48200D7CB30 /* ManageEntryTableViewController.swift */; };
 		24333A7D1BFF2A6400FB9FCE /* ScreenSaverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */; };
+		2455165B1C0DEA52000746F5 /* ManageEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455165A1C0DEA52000746F5 /* ManageEntriesTableViewController.swift */; };
 		246652031C0C6CA90046C26C /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */; };
 		246652051C0CA71D0046C26C /* NSDate+Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246652041C0CA71D0046C26C /* NSDate+Comparison.swift */; };
 		2476E3001BF8175200C4CFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */; };
@@ -38,7 +40,9 @@
 		2422DAED1BF8F06100C0DFF9 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Serializable.swift"; sourceTree = "<group>"; };
 		2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubmitCompletedViewController.swift; path = ../SubmitCompletedViewController.swift; sourceTree = "<group>"; };
+		2428F43B1C0DB48200D7CB30 /* ManageEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManageEntryTableViewController.swift; path = ../ManageEntryTableViewController.swift; sourceTree = "<group>"; };
 		24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSaverViewController.swift; sourceTree = "<group>"; };
+		2455165A1C0DEA52000746F5 /* ManageEntriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEntriesTableViewController.swift; sourceTree = "<group>"; };
 		246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		246652041C0CA71D0046C26C /* NSDate+Comparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparison.swift"; sourceTree = "<group>"; };
 		2476E2F51BF8175200C4CFA2 /* DaveoIdeaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +90,8 @@
 		246652071C0CA75C0046C26C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2455165A1C0DEA52000746F5 /* ManageEntriesTableViewController.swift */,
+				2428F43B1C0DB48200D7CB30 /* ManageEntryTableViewController.swift */,
 				2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */,
 				246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */,
 				2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */,
@@ -229,6 +235,7 @@
 				24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */,
 				246652051C0CA71D0046C26C /* NSDate+Comparison.swift in Sources */,
 				2476E31E1BF8183C00C4CFA2 /* CollectionViewController.swift in Sources */,
+				2455165B1C0DEA52000746F5 /* ManageEntriesTableViewController.swift in Sources */,
 				2476E31D1BF8183C00C4CFA2 /* CollectionViewCell.swift in Sources */,
 				2476E3141BF8183400C4CFA2 /* Idea.swift in Sources */,
 				2476E3201BF8183C00C4CFA2 /* EmbbedViewController.swift in Sources */,
@@ -246,6 +253,7 @@
 				2422DAF41BF929BD00C0DFF9 /* SubmitCompletedViewController.swift in Sources */,
 				246652031C0C6CA90046C26C /* ThemeCollectionViewCell.swift in Sources */,
 				2422DAEC1BF8B8C000C0DFF9 /* EntryManager.swift in Sources */,
+				2428F43C1C0DB48200D7CB30 /* ManageEntryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox.LoungeDaveoiPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -373,7 +381,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "daveo-apps.DaveoIdeaBox.LoungeDaveoiPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -43,17 +43,16 @@ class EntryCollectionViewCell: UICollectionViewCell {
     }
     
     func updateUI() {
+        
         if let loadedEntry = entry {
             
             // Check if last vote date in on 1 min interval
             let nextAllowedVoteDate = loadedEntry.lastVoteDate.dateByAddingTimeInterval(TimeIntervals.nextAllowedVoteAfter)
             let nowDateTimeIntervalSince1970 = NSDate().timeIntervalSince1970
             if nextAllowedVoteDate.timeIntervalSince1970 < nowDateTimeIntervalSince1970 {
-                //unlockThumbUpCountButton()
-            }
+                unlockThumbUpCountButton()            }
             else {
                 lockThumbUpCountButton()
-                
                 let timeForNextAllowedVote = nextAllowedVoteDate.timeIntervalSince1970 - nowDateTimeIntervalSince1970 as Double
                 performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: timeForNextAllowedVote)
             }
@@ -62,19 +61,18 @@ class EntryCollectionViewCell: UICollectionViewCell {
             authorLabel?.text = loadedEntry.authorName.capitalizedString
             thumbUpCountButton.setTitle("\(loadedEntry.thumbUpCount)", forState: .Normal)
             
-            
             // IMAGE
             var image: UIImage?
             if let imageNamed = loadedEntry.preferedImageTheme {
                 image = UIImage(named: imageNamed)
             }
             else {
-                let imagesNamed = Idea().getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
+                let imagesNamed = Idea.getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
                 let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
                 image = UIImage(named: imagesNamed[randomIndex])
             }
             
-            //image = image?.applyBlurWithRadius(CGFloat(1), tintColor: nil, saturationDeltaFactor: 1.0)
+            image = image?.applyBlurWithRadius(CGFloat(1), tintColor: nil, saturationDeltaFactor: 1.0)
        
             ideaThemedImageView?.image = image
             ideaThemedImageView?.contentMode = .ScaleAspectFill

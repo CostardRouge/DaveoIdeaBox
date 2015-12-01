@@ -22,7 +22,7 @@ class Idea: Serializable {
         case Upset = 20, Sad = 40, Neutral = 55, Happy = 80, Euphoric = 90
     }
     
-    func getThemeImageNamesFor(hashValue: Int) -> [String] {
+    static func getThemeImageNamesFor(hashValue: Int) -> [String] {
         
         var imagesNamed = [[String]](count: Idea.themes.count, repeatedValue: [""])
         
@@ -40,7 +40,7 @@ class Idea: Serializable {
         return imagesNamed[hashValue]
     }
     
-    func getThemePrintableNameFor(hashValue: Int) -> String? {
+    static func getThemePrintableNameFor(hashValue: Int) -> String? {
         for theme in Idea.themes {
             if theme.id.hashValue == hashValue {
                 return theme.printableName
@@ -87,7 +87,7 @@ class Idea: Serializable {
     
     var theme: Int {
         didSet {
-            let imagesNamed = Idea().getThemeImageNamesFor(self.theme) // should be optionnal
+            let imagesNamed = Idea.getThemeImageNamesFor(self.theme) // should be optionnal
             let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
             self.preferedImageTheme = imagesNamed[randomIndex]
         }
