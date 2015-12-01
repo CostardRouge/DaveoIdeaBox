@@ -11,6 +11,8 @@ import UIKit
 struct NotificationIdentifiers {
     static let screenSaverTimeUp = "screenSaverTimeUpNotification"
     static let userActivity = "userActivityNotification"
+    //static let newEntry = "newEntryNotification"
+    static let entriesUpdated = "entriesUpdatedNotification"
 }
 
 struct ScreenSaverSettings {

@@ -13,10 +13,10 @@
 		2422DAF41BF929BD00C0DFF9 /* SubmitCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */; };
 		24333A7D1BFF2A6400FB9FCE /* ScreenSaverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */; };
 		246652031C0C6CA90046C26C /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */; };
+		246652051C0CA71D0046C26C /* NSDate+Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246652041C0CA71D0046C26C /* NSDate+Comparison.swift */; };
 		2476E3001BF8175200C4CFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */; };
 		2476E3031BF8175200C4CFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2476E3011BF8175200C4CFA2 /* LaunchScreen.storyboard */; };
 		2476E30B1BF817D800C4CFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E30A1BF817D800C4CFA2 /* AppDelegate.swift */; };
-		2476E30E1BF8180100C4CFA2 /* EntryTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E30C1BF8180100C4CFA2 /* EntryTileView.swift */; };
 		2476E30F1BF8180100C4CFA2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E30D1BF8180100C4CFA2 /* RoundedButton.swift */; };
 		2476E3121BF8182600C4CFA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2476E3111BF8182600C4CFA2 /* Main.storyboard */; };
 		2476E3141BF8183400C4CFA2 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3131BF8183400C4CFA2 /* Idea.swift */; };
@@ -39,12 +39,12 @@
 		2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubmitCompletedViewController.swift; path = ../SubmitCompletedViewController.swift; sourceTree = "<group>"; };
 		24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSaverViewController.swift; sourceTree = "<group>"; };
 		246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		246652041C0CA71D0046C26C /* NSDate+Comparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparison.swift"; sourceTree = "<group>"; };
 		2476E2F51BF8175200C4CFA2 /* DaveoIdeaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaveoIdeaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2476E3021BF8175200C4CFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2476E3041BF8175200C4CFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2476E30A1BF817D800C4CFA2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2476E30C1BF8180100C4CFA2 /* EntryTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTileView.swift; sourceTree = "<group>"; };
 		2476E30D1BF8180100C4CFA2 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2476E3111BF8182600C4CFA2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2476E3131BF8183400C4CFA2 /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
@@ -71,6 +71,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		246652061C0CA7420046C26C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				246652041C0CA71D0046C26C /* NSDate+Comparison.swift */,
+				2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */,
+				24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		246652071C0CA75C0046C26C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */,
+				246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */,
+				2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */,
+				2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */,
+				2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */,
+				2476E3191BF8183C00C4CFA2 /* AddEntryViewController.swift */,
+				24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */,
+				2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */,
+				24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */,
+				2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */,
+				2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2476E2EC1BF8175200C4CFA2 = {
 			isa = PBXGroup;
 			children = (
@@ -90,17 +118,8 @@
 		2476E2F71BF8175200C4CFA2 /* DaveoIdeaBox */ = {
 			isa = PBXGroup;
 			children = (
-				2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */,
-				246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */,
-				2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */,
-				2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */,
-				2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */,
-				2476E3191BF8183C00C4CFA2 /* AddEntryViewController.swift */,
-				24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */,
-				2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */,
-				24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */,
-				2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */,
-				2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */,
+				246652071C0CA75C0046C26C /* Views */,
+				246652061C0CA7420046C26C /* Extensions */,
 				2476E3251BF8188300C4CFA2 /* Models */,
 				2476E3101BF8180900C4CFA2 /* UI */,
 				2476E2FF1BF8175200C4CFA2 /* Assets.xcassets */,
@@ -116,10 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				2422DAED1BF8F06100C0DFF9 /* Serializable.swift */,
-				2422DAEF1BF8F44D00C0DFF9 /* Array+Serializable.swift */,
-				24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */,
 				2476E31C1BF8183C00C4CFA2 /* FaceView.swift */,
-				2476E30C1BF8180100C4CFA2 /* EntryTileView.swift */,
 				2476E30D1BF8180100C4CFA2 /* RoundedButton.swift */,
 			);
 			name = UI;
@@ -208,6 +224,7 @@
 			files = (
 				2422DAF01BF8F44D00C0DFF9 /* Array+Serializable.swift in Sources */,
 				24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */,
+				246652051C0CA71D0046C26C /* NSDate+Comparison.swift in Sources */,
 				2476E31E1BF8183C00C4CFA2 /* CollectionViewController.swift in Sources */,
 				2476E31D1BF8183C00C4CFA2 /* CollectionViewCell.swift in Sources */,
 				2476E3141BF8183400C4CFA2 /* Idea.swift in Sources */,
@@ -218,7 +235,6 @@
 				2476E30F1BF8180100C4CFA2 /* RoundedButton.swift in Sources */,
 				2476E3231BF8183C00C4CFA2 /* LaunchViewController.swift in Sources */,
 				2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */,
-				2476E30E1BF8180100C4CFA2 /* EntryTileView.swift in Sources */,
 				2476E3241BF8183C00C4CFA2 /* FaceView.swift in Sources */,
 				24D95B811BFA597C00E18661 /* AddEntryExtraViewController.swift in Sources */,
 				2422DAEE1BF8F06100C0DFF9 /* Serializable.swift in Sources */,

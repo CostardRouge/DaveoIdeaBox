@@ -29,6 +29,10 @@ class EntriesCollectionViewController: UICollectionViewController {
     func entryForIndexPath(indexPath: NSIndexPath) -> Idea {
         return entries[indexPath.row]
     }
+    
+    func reloadCollectionViewData() {
+        entriesCollectionView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +41,11 @@ class EntriesCollectionViewController: UICollectionViewController {
 
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = true
-
-        // Register cell classes
-        //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
         
-        print("ff")
+        let center = NSNotificationCenter.defaultCenter()
+        
+        //center.addObserver(self, selector: "reloadCollectionViewDataAtNewEntry", name: NotificationIdentifiers.newEntry, object: nil)
+        center.addObserver(entriesCollectionView, selector: "reloadData", name: NotificationIdentifiers.entriesUpdated, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,7 +73,6 @@ class EntriesCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func submitCompletedViewControllerDismissed(segue:UIStoryboardSegue) {
-        
         
         if let cells = collectionView?.visibleCells() {
             for cell in cells {

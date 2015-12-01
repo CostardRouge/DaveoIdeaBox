@@ -29,8 +29,8 @@ class EntryCollectionViewCell: UICollectionViewCell {
             entry = loadedEntry
             
             // Locking the cell vote button for 1 min
-            thumbUpCountUpButton.enabled = false
-            performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: 60.0)
+            lockThumbUpCountButton()
+            performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: TimeIntervals.nextAllowedVoteAfter)
         }
     }
     
@@ -38,12 +38,32 @@ class EntryCollectionViewCell: UICollectionViewCell {
         thumbUpCountUpButton.enabled = true
     }
     
+    func lockThumbUpCountButton() {
+        thumbUpCountUpButton.enabled = false
+    }
+    
     func updateUI() {
         if let loadedEntry = entry {
+            
+            // Check if last vote date in on 1 min interval
+            let nextAllowedVoteDate = loadedEntry.lastVoteDate.dateByAddingTimeInterval(TimeIntervals.nextAllowedVoteAfter)
+            let nowDateTimeIntervalSince1970 = NSDate().timeIntervalSince1970
+            if nextAllowedVoteDate.timeIntervalSince1970 < nowDateTimeIntervalSince1970 {
+                //unlockThumbUpCountButton()
+            }
+            else {
+                lockThumbUpCountButton()
+                
+                let timeForNextAllowedVote = nextAllowedVoteDate.timeIntervalSince1970 - nowDateTimeIntervalSince1970 as Double
+                performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: timeForNextAllowedVote)
+            }
+            
             contentLabel?.text = loadedEntry.content
             authorLabel?.text = loadedEntry.authorName.capitalizedString
             thumbUpCountButton.setTitle("\(loadedEntry.thumbUpCount)", forState: .Normal)
             
+            
+            // IMAGE
             var image: UIImage?
             if let imageNamed = loadedEntry.preferedImageTheme {
                 image = UIImage(named: imageNamed)

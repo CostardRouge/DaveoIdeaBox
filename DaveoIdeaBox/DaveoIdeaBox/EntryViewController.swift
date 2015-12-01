@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct TimeIntervals {
+    static let nextAllowedVoteAfter = 60.0
+}
+
 class EntryViewController: UIViewController {
     // GUI elements
     @IBOutlet weak var contentTextView: UITextView!
@@ -61,6 +65,18 @@ class EntryViewController: UIViewController {
     
     func setupGUI() {
         if let loadedEntry = entry {
+            // Check if last vote date in on 1 min interval
+            let nextAllowedVoteDate = loadedEntry.lastVoteDate.dateByAddingTimeInterval(TimeIntervals.nextAllowedVoteAfter)
+            let nowDateTimeIntervalSince1970 = NSDate().timeIntervalSince1970
+            if nextAllowedVoteDate.timeIntervalSince1970 < nowDateTimeIntervalSince1970 {
+                //unlockThumbUpCountButton()
+            }
+            else {
+                lockThumbUpCountButton()
+                let timeForNextAllowedVote = nextAllowedVoteDate.timeIntervalSince1970 - nowDateTimeIntervalSince1970 as Double
+                performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: timeForNextAllowedVote)
+            }
+            
             contentTextView?.text = loadedEntry.content
             authorButton?.setTitle(loadedEntry.authorName.uppercaseString, forState: .Normal)
             
@@ -71,6 +87,7 @@ class EntryViewController: UIViewController {
             creationDateLabel?.text = makeCreationDateLabelText(loadedEntry.creationDate)
             thumbUpCount?.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
             
+            // IMAGE
             var image: UIImage?
             if let imageNamed = loadedEntry.preferedImageTheme {
                 image = UIImage(named: imageNamed)
@@ -87,24 +104,28 @@ class EntryViewController: UIViewController {
     }
     
     @IBAction func thumbUpTouchUpInside(sender: UIButton) {
+        // Very bad...
+        EntryManager().postEntriesUpdatedNotification()
+        
         // Model mechanism
         entry?.thumbUpCount = (entry?.thumbUpCount)! + 1
         
         // Locking the vote button for 1 min
-        thumbUpCountButton.enabled = false
-        let oldColor = thumbUpCountButton.fillColor
-        thumbUpCountButton.fillColor = UIColor.grayColor()
-        performSelector("unlockThumbUpCountButton:", withObject: oldColor, afterDelay: 60.0)
+        lockThumbUpCountButton()
+        performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: TimeIntervals.nextAllowedVoteAfter)
         
         // GUI mechanism
         setupGUI()
     }
     
-    func unlockThumbUpCountButton(oldColor: AnyObject) {
-        thumbUpCountButton.enabled = true
-        if let color = oldColor as? UIColor {
-            thumbUpCountButton.fillColor = color
-        }
+    func lockThumbUpCountButton() {
+        thumbUpCountButton?.enabled = false
+        thumbUpCountButton?.fillColor = UIColor.grayColor()
+    }
+    
+    func unlockThumbUpCountButton() {
+        thumbUpCountButton?.enabled = true
+        thumbUpCountButton?.fillColor = daveoGreenColor
     }
     
     @IBAction func deleteEntryButtonTouchUpInside(sender: AnyObject) {

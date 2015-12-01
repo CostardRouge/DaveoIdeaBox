@@ -90,36 +90,36 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
     func submitEntry() {
         var issue = false // could be a detailled value further
         
+        // Filling our entry object
         if let loadedEntry = entry {
-            // Filling our entry object
             
+            // Setting selected theme
             if let indexPaths = themesCollectionView.indexPathsForSelectedItems() {
-                // Setting selected theme
-                
-                let selectedIndexPath : NSIndexPath = indexPaths[0] as NSIndexPath
-                let selectedThemeDefinition = themeDefinitionForIndexPath(selectedIndexPath)
-                
-                loadedEntry.theme = selectedThemeDefinition.id.hashValue
-                
-                // Setting user mood
-                if happiness <= Idea.Mood.Upset.rawValue {
-                    loadedEntry.mood = Idea.Mood.Upset.rawValue
-                }
-                else if happiness <= Idea.Mood.Sad.rawValue {
-                    loadedEntry.mood = Idea.Mood.Upset.rawValue
-                }
-                else if happiness <= Idea.Mood.Neutral.rawValue {
-                    loadedEntry.mood = Idea.Mood.Upset.rawValue
-                }
-                else if happiness <= Idea.Mood.Happy.rawValue {
-                    loadedEntry.mood = Idea.Mood.Upset.rawValue
+                if indexPaths.count > 0 {
+                    let selectedIndexPath: NSIndexPath = indexPaths[0] as NSIndexPath
+                    let selectedThemeDefinition = themeDefinitionForIndexPath(selectedIndexPath)
+                    loadedEntry.theme = selectedThemeDefinition.id.hashValue
                 }
                 else {
-                    loadedEntry.mood = Idea.Mood.Euphoric.rawValue
+                    issue = true
                 }
             }
+                
+            // Setting user mood
+            if happiness <= Idea.Mood.Upset.rawValue {
+                loadedEntry.mood = Idea.Mood.Upset.rawValue
+            }
+            else if happiness <= Idea.Mood.Sad.rawValue {
+                loadedEntry.mood = Idea.Mood.Upset.rawValue
+            }
+            else if happiness <= Idea.Mood.Neutral.rawValue {
+                loadedEntry.mood = Idea.Mood.Upset.rawValue
+            }
+            else if happiness <= Idea.Mood.Happy.rawValue {
+                loadedEntry.mood = Idea.Mood.Upset.rawValue
+            }
             else {
-                issue = true
+                loadedEntry.mood = Idea.Mood.Euphoric.rawValue
             }
             
             if issue {
@@ -234,11 +234,4 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
             cell.layer.borderWidth = 0.0
         }
     }
-    
-//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) {
-//            cell.layer.borderColor = UIColor.blueColor().CGColor
-//            cell.layer.borderWidth = 4.0
-//        }
-//    }
 }

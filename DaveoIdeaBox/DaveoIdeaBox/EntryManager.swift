@@ -60,9 +60,7 @@ class EntryManager {
             
             entries.append(item)
         }
-        
-        
-        
+    
         if let sortDemand = needToBeSorted {
             if sortDemand {
                 sortEntries()
@@ -71,6 +69,9 @@ class EntryManager {
     }
     
     func addEntry(entry: Idea, needToBeSorted: Bool? = false) -> Bool {
+        // Post entries updated noticification
+        postEntriesUpdatedNotification()
+        
         // Adding the new entry
         entries.append(entry)
         
@@ -85,8 +86,6 @@ class EntryManager {
     }
     
     func getEntryAt(direction: Direction, of: Idea) -> Idea? {
-
-        
         if (entries.count > 1) {
             if let found = entries.indexOf(of) {
                 let maxIndex = (entries.count - 1)
@@ -107,6 +106,9 @@ class EntryManager {
     }
     
     func deleteEntry(entry: Idea, needToBeSorted: Bool? = false) -> Bool {
+        // Post entries updated noticification
+        postEntriesUpdatedNotification()
+        
         // Deleting the entry
         if let found = entries.indexOf(entry) {
             entries.removeAtIndex(found)
@@ -193,6 +195,12 @@ class EntryManager {
             }
         }
         return entries
+    }
+    
+    // should be private but i want to gain time
+    func postEntriesUpdatedNotification() {
+        let center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName(NotificationIdentifiers.entriesUpdated, object: nil)
     }
 
 }
