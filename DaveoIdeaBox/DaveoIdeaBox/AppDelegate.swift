@@ -8,17 +8,6 @@
 
 import UIKit
 
-struct NotificationIdentifiers {
-    static let screenSaverTimeUp = "screenSaverTimeUpNotification"
-    static let userActivity = "userActivityNotification"
-    //static let newEntry = "newEntryNotification"
-    static let entriesUpdated = "entriesUpdatedNotification"
-}
-
-struct ScreenSaverSettings {
-    static let timeBeforeActivation = 300.0
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -54,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         screenSaverTimer = screenSaverTimer ?? NSTimer()
         
         screenSaverTimer?.invalidate()
-        screenSaverTimer = NSTimer.scheduledTimerWithTimeInterval(ScreenSaverSettings.timeBeforeActivation, target: self, selector: "showAppScreenSaver", userInfo: nil, repeats: false)
+        screenSaverTimer = NSTimer.scheduledTimerWithTimeInterval(TimeIntervals.ScreenSaver.timeBeforeActivation, target: self, selector: "showAppScreenSaver", userInfo: nil, repeats: false)
     }
     
     static func postUserActivityNotification() {

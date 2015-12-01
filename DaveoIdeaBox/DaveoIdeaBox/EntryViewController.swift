@@ -8,10 +8,6 @@
 
 import UIKit
 
-struct TimeIntervals {
-    static let nextAllowedVoteAfter = 60.0
-}
-
 class EntryViewController: UIViewController {
     // GUI elements
     @IBOutlet weak var contentTextView: UITextView!

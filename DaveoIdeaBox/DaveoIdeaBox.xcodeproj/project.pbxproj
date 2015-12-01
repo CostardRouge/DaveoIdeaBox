@@ -28,6 +28,7 @@
 		2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */; };
 		2476E3231BF8183C00C4CFA2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */; };
 		2476E3241BF8183C00C4CFA2 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31C1BF8183C00C4CFA2 /* FaceView.swift */; };
+		24B42E411C0DACA600DF6524 /* Structures+Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B42E401C0DACA600DF6524 /* Structures+Globals.swift */; };
 		24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */; };
 		24D95B811BFA597C00E18661 /* AddEntryExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		2476E31C1BF8183C00C4CFA2 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		24B42E401C0DACA600DF6524 /* Structures+Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Structures+Globals.swift"; sourceTree = "<group>"; };
 		24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 		24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryExtraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 			children = (
 				2476E3131BF8183400C4CFA2 /* Idea.swift */,
 				2422DAEB1BF8B8C000C0DFF9 /* EntryManager.swift */,
+				24B42E401C0DACA600DF6524 /* Structures+Globals.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				2476E31F1BF8183C00C4CFA2 /* EntryViewController.swift in Sources */,
 				2476E30B1BF817D800C4CFA2 /* AppDelegate.swift in Sources */,
 				2476E3211BF8183C00C4CFA2 /* AddEntryViewController.swift in Sources */,
+				24B42E411C0DACA600DF6524 /* Structures+Globals.swift in Sources */,
 				2476E30F1BF8180100C4CFA2 /* RoundedButton.swift in Sources */,
 				2476E3231BF8183C00C4CFA2 /* LaunchViewController.swift in Sources */,
 				2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */,

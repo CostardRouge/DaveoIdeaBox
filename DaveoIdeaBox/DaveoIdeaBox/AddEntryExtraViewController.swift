@@ -9,8 +9,6 @@
 import UIKit
 
 private let reuseIdentifier = "EntryThemeChoice"
-let daveoGreenColor = UIColor(red: 0, green: 0.501961, blue: 0, alpha: 1)
-let daveoBlueColor = UIColor(red: 0, green: 0.490196, blue: 0.713726, alpha: 1)
 
 class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
