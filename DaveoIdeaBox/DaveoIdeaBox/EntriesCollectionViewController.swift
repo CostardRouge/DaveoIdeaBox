@@ -37,7 +37,7 @@ class EntriesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EntryManager.sharedInstance.createRandomEntries()
+        //EntryManager.sharedInstance.createRandomEntries()
 
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = true
@@ -72,19 +72,6 @@ class EntriesCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func submitCompletedViewControllerDismissed(segue:UIStoryboardSegue) {
-        
-        if let cells = collectionView?.visibleCells() {
-            for cell in cells {
-                if let entryCell = cell as? EntryCollectionViewCell {
-                    print(entryCell.authorLabel)
-                }
-            }
-        }
-        
-        // Here I gather back the recently created entry
-        
-        
-        //collectionView?.scrollToItemAtIndexPath(NSIndexPath(forRow: 3, inSection: 1), atScrollPosition: .Top, animated: true)
         print("entry \(recentlyCreatedEntry)")
     }
 
@@ -107,8 +94,9 @@ class EntriesCollectionViewController: UICollectionViewController {
         
         switch indexPath.item {
         case 0:
-            //cell.contentLabel.font = UIFont(name: "Avenir", size: 52)
             cell.contentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
+        case 1:
+            cell.contentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle3)
         default:
             cell.contentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         }

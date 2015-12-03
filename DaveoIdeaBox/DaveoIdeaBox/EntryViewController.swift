@@ -17,7 +17,6 @@ class EntryViewController: UIViewController {
     
     @IBOutlet weak var ideaThemedImageView: UIImageView!
 
-    @IBOutlet weak var authorLabel: UILabel! // part of the ui, not the entry content
     @IBOutlet weak var authorButton: UIButton!
     @IBOutlet weak var themeButton: UIButton!
     
@@ -186,6 +185,10 @@ class EntryViewController: UIViewController {
                 metvc.entry = entry!
             }
         }
+    }
+    
+    @IBAction func submitCompletedViewControllerDismissed(segue:UIStoryboardSegue) {
+        print("youhou")
     }
     
     // GUI helper methods

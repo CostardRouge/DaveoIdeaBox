@@ -26,8 +26,10 @@ class SubmitCompletedViewController: UIViewController {
     }
     
     func updateUI() {
-        if let loadedEntry = entry {
-            thankYouLabel?.text = getThankYouLabelText(loadedEntry.authorName)
+        if isViewLoaded() {
+            if let loadedEntry = entry {
+                thankYouLabel?.text = getThankYouLabelText(loadedEntry.authorName)
+            }
         }
     }
     
@@ -45,6 +47,10 @@ class SubmitCompletedViewController: UIViewController {
             // Here I transmit the recently created entry
             if let cvc = segue.destinationViewController as? EntriesCollectionViewController {
                 cvc.recentlyCreatedEntry = entry
+            }
+            else if let evc = segue.destinationViewController as? EntryViewController {
+                print("entro to view")
+                evc.entry = entry
             }
         }
     }

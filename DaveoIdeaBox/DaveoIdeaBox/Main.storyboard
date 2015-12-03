@@ -699,7 +699,6 @@
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.08235294118" green="0.1960784314" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" red="0.8980392157" green="0.90980392160000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -810,10 +809,6 @@
                                                     <exclude reference="DvU-7I-zDG"/>
                                                     <exclude reference="Uar-Re-6NC"/>
                                                     <exclude reference="YfE-gn-NUQ"/>
-                                                    <exclude reference="ZWD-DP-8d3"/>
-                                                    <exclude reference="hTP-dz-QPf"/>
-                                                    <exclude reference="ot2-Uo-D63"/>
-                                                    <exclude reference="rTS-js-KCA"/>
                                                     <exclude reference="Czf-yA-tO3"/>
                                                     <exclude reference="Fva-xF-9ne"/>
                                                     <exclude reference="RGu-lg-yEm"/>
@@ -822,6 +817,10 @@
                                                     <exclude reference="ss4-rw-xND"/>
                                                     <exclude reference="ubs-6b-Irr"/>
                                                     <exclude reference="zAa-ED-4x6"/>
+                                                    <exclude reference="ZWD-DP-8d3"/>
+                                                    <exclude reference="hTP-dz-QPf"/>
+                                                    <exclude reference="ot2-Uo-D63"/>
+                                                    <exclude reference="rTS-js-KCA"/>
                                                     <exclude reference="D0n-tx-h1X"/>
                                                     <exclude reference="F4e-7Q-Rhx"/>
                                                     <exclude reference="FCb-Pb-Ka7"/>
@@ -841,13 +840,13 @@
                                                     <include reference="DvU-7I-zDG"/>
                                                     <include reference="Uar-Re-6NC"/>
                                                     <include reference="YfE-gn-NUQ"/>
-                                                    <exclude reference="ot2-Uo-D63"/>
-                                                    <include reference="rTS-js-KCA"/>
                                                     <exclude reference="Fva-xF-9ne"/>
                                                     <exclude reference="RGu-lg-yEm"/>
                                                     <include reference="YGl-sD-03D"/>
                                                     <exclude reference="ikh-s6-COh"/>
                                                     <exclude reference="ss4-rw-xND"/>
+                                                    <exclude reference="ot2-Uo-D63"/>
+                                                    <include reference="rTS-js-KCA"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -988,6 +987,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="5xW-2A-spr" kind="unwind" unwindAction="submitCompletedViewControllerDismissed:" id="9cs-Cd-EVd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -1021,12 +1023,12 @@
                                 <exclude reference="jgi-Xx-8zD"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2vN-sf-HNv"/>
                                 <exclude reference="18k-y5-O04"/>
                                 <exclude reference="1Y7-5h-VaU"/>
                                 <exclude reference="8O0-FD-wUV"/>
                                 <exclude reference="Z8O-Qi-r0p"/>
                                 <exclude reference="gfF-hP-4AU"/>
+                                <exclude reference="2vN-sf-HNv"/>
                                 <exclude reference="5xL-LJ-kah"/>
                                 <exclude reference="DYG-ti-vcn"/>
                                 <exclude reference="rvL-I6-e8K"/>
@@ -1043,13 +1045,13 @@
                                 <include reference="jgi-Xx-8zD"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2vN-sf-HNv"/>
-                                <exclude reference="dlG-h9-DgH"/>
                                 <exclude reference="18k-y5-O04"/>
                                 <include reference="1Y7-5h-VaU"/>
                                 <include reference="8O0-FD-wUV"/>
                                 <include reference="Z8O-Qi-r0p"/>
                                 <exclude reference="gfF-hP-4AU"/>
+                                <include reference="2vN-sf-HNv"/>
+                                <exclude reference="dlG-h9-DgH"/>
                                 <exclude reference="1Lh-rp-e8D"/>
                                 <include reference="5xL-LJ-kah"/>
                                 <exclude reference="Buo-Ee-CYm"/>
@@ -1074,24 +1076,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DMa-x0-gff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5xW-2A-spr" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="da2-E8-xVl"/>
             </objects>
-            <point key="canvasLocation" x="996" y="1884"/>
+            <point key="canvasLocation" x="1017" y="1153.5"/>
         </scene>
         <!--Manage Entry Table View Controller-->
         <scene sceneID="MvO-Pn-7Tx">
             <objects>
                 <tableViewController id="Nt9-fJ-SiB" customClass="ManageEntryTableViewController" customModule="DaveoIdeaBox" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="12o-mp-4CP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Detail" id="oJZ-1Y-m8W">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="authorCell" textLabel="Ay7-mf-REB" detailTextLabel="eHd-i9-Dze" style="IBUITableViewCellStyleValue1" id="Xxt-sc-5Y0" userLabel="Author">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xxt-sc-5Y0" id="dR9-tG-pUA">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1125,7 +1128,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3Lu-tl-gqY" detailTextLabel="1Ob-qk-Xtr" style="IBUITableViewCellStyleValue1" id="MrA-pq-ZGq" userLabel="Email">
-                                        <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="94" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MrA-pq-ZGq" id="EWM-H9-gH6">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1159,7 +1162,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="WO8-uC-2xb" detailTextLabel="gys-5d-VYC" style="IBUITableViewCellStyleValue1" id="9Fu-Jk-Q8u" userLabel="Creation date">
-                                        <rect key="frame" x="0.0" y="202" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="138" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Fu-Jk-Q8u" id="vHz-Pq-mUR">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1193,7 +1196,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="GZ9-oo-bam" detailTextLabel="svs-Nf-jnj" style="IBUITableViewCellStyleValue1" id="czB-2Y-Cai" userLabel="Thumb up count">
-                                        <rect key="frame" x="0.0" y="246" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="182" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czB-2Y-Cai" id="MOo-LG-T8G">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1227,7 +1230,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="luG-5g-31R" detailTextLabel="7NQ-wT-9dy" style="IBUITableViewCellStyleValue1" id="qk4-VJ-tvz" userLabel="Theme">
-                                        <rect key="frame" x="0.0" y="290" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="226" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qk4-VJ-tvz" id="gTc-0a-c5d">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1261,7 +1264,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="aES-Uv-Anf" detailTextLabel="Cgv-Kb-t17" rowHeight="144" style="IBUITableViewCellStyleValue1" id="n2r-sP-V4m" userLabel="Content">
-                                        <rect key="frame" x="0.0" y="334" width="600" height="144"/>
+                                        <rect key="frame" x="0.0" y="270" width="600" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2r-sP-V4m" id="UeP-mZ-28U">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="143"/>
@@ -1299,7 +1302,7 @@
                             <tableViewSection headerTitle="Actions" id="6bl-Zg-0BY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Wcq-T2-UZd" userLabel="Change thumb up count">
-                                        <rect key="frame" x="0.0" y="529" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="465" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wcq-T2-UZd" id="Dh8-7o-yU6">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1322,7 +1325,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qaI-nt-d0k" userLabel="Edit entry">
-                                        <rect key="frame" x="0.0" y="573" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="509" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qaI-nt-d0k" id="bpY-1p-MjD">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1345,7 +1348,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="jGI-ft-RBC" userLabel="Edit entry">
-                                        <rect key="frame" x="0.0" y="617" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="553" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jGI-ft-RBC" id="52g-tI-GaP">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1370,7 +1373,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" shouldIndentWhileEditing="NO" textLabel="46K-k0-hvj" style="IBUITableViewCellStyleDefault" id="6nf-Ii-wYO">
-                                        <rect key="frame" x="0.0" y="661" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="597" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6nf-Ii-wYO" id="BzU-jE-VnW">
                                             <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
@@ -3007,6 +3010,7 @@
             <objects>
                 <collectionViewController id="nuz-ST-pii" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="a6r-k7-eFP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qzd-jQ-BYa">
@@ -3049,6 +3053,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9cv-TN-USA"/>
-        <segue reference="Xy0-n2-VVo"/>
+        <segue reference="6Tg-5X-6sP"/>
     </inferredMetricsTieBreakers>
 </document>
