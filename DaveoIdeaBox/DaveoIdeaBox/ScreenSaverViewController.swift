@@ -13,12 +13,18 @@ class ScreenSaverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.navigationBar.hidden = true
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         
+        self.navigationController?.navigationBar.hidden = false
         self.navigationController?.popToRootViewControllerAnimated(false)
+        
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }
