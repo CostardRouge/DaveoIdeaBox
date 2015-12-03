@@ -17,6 +17,7 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     // Attributes
     var entry = Idea() {
         didSet {
+            // Could be useful if u want to re-edit the entry
             // updateUI()
         }
     }

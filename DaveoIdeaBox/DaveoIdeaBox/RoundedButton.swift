@@ -36,5 +36,4 @@ class RoundedButton: UIButton {
             layer.borderWidth = borderWidth
         }
     }
-    
 }

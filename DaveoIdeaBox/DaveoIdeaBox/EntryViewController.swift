@@ -12,11 +12,12 @@ class EntryViewController: UIViewController {
     // GUI elements
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var creationDateLabel: UILabel!
-    @IBOutlet weak var thumbUpCount: UILabel!
+    @IBOutlet weak var thumbUpCountLabel: UILabel!
     @IBOutlet weak var thumbUpCountButton: RoundedButton!
     
     @IBOutlet weak var ideaThemedImageView: UIImageView!
 
+    @IBOutlet weak var authorLabel: UILabel! // part of the ui, not the entry content
     @IBOutlet weak var authorButton: UIButton!
     @IBOutlet weak var themeButton: UIButton!
     
@@ -62,47 +63,50 @@ class EntryViewController: UIViewController {
     }
     
     func setupGUI() {
-        if let loadedEntry = entry {
-            // Check if last vote date in on 1 min interval
-            let nextAllowedVoteDate = loadedEntry.lastVoteDate.dateByAddingTimeInterval(TimeIntervals.nextAllowedVoteAfter)
-            let nowDateTimeIntervalSince1970 = NSDate().timeIntervalSince1970
-            if nextAllowedVoteDate.timeIntervalSince1970 < nowDateTimeIntervalSince1970 {
-                unlockThumbUpCountButton()
-            }
-            else {
-                lockThumbUpCountButton()
-                let timeForNextAllowedVote = nextAllowedVoteDate.timeIntervalSince1970 - nowDateTimeIntervalSince1970 as Double
-                performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: timeForNextAllowedVote)
-            }
-            
-            contentTextView?.text = loadedEntry.content
-            authorButton?.setTitle(loadedEntry.authorName.uppercaseString, forState: .Normal)
-            
-            if let themeName = Idea.getThemePrintableNameFor(loadedEntry.theme) {
-                themeButton?.setTitle(themeName.uppercaseString, forState: .Normal)
-            }
-            
-            creationDateLabel?.text = makeCreationDateLabelText(loadedEntry.creationDate)
-            thumbUpCount?.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
-            
-            // IMAGE
-            var image: UIImage?
-            if let imageNamed = loadedEntry.preferedImageTheme {
-                image = UIImage(named: imageNamed)
-            }
-            else {
-                let imagesNamed = Idea.getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
-                let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
-                image = UIImage(named: imagesNamed[randomIndex])
-            }
-            
-            ideaThemedImageView?.image = image
-            ideaThemedImageView?.contentMode = .ScaleAspectFill
-            
-            if let image = ideaThemedImageView?.image {
-                let heightOffset = image.size.height / 2.0
-                scrollViewForImageView?.contentSize = image.size
-                scrollViewForImageView?.contentOffset = CGPoint(x: 0.0, y: heightOffset)
+        if isViewLoaded() {
+            if let loadedEntry = entry {
+                // Check if last vote date in on 1 min interval
+                let nextAllowedVoteDate = loadedEntry.lastVoteDate.dateByAddingTimeInterval(TimeIntervals.nextAllowedVoteAfter)
+                let nowDateTimeIntervalSince1970 = NSDate().timeIntervalSince1970
+                if nextAllowedVoteDate.timeIntervalSince1970 < nowDateTimeIntervalSince1970 {
+                    unlockThumbUpCountButton()
+                }
+                else {
+                    lockThumbUpCountButton()
+                    let timeForNextAllowedVote = nextAllowedVoteDate.timeIntervalSince1970 - nowDateTimeIntervalSince1970 as Double
+                    performSelector("unlockThumbUpCountButton", withObject: nil, afterDelay: timeForNextAllowedVote)
+                }
+                
+                contentTextView?.text = loadedEntry.content
+                authorButton?.setTitle(loadedEntry.authorName.uppercaseString, forState: .Normal)
+                
+                if let themeName = Idea.getThemePrintableNameFor(loadedEntry.theme) {
+                    themeButton?.setTitle(themeName.uppercaseString, forState: .Normal)
+                }
+                
+                creationDateLabel?.text = makeCreationDateLabelText(loadedEntry.creationDate)
+                thumbUpCountLabel?.text = makeThumbUpCountLabelText(loadedEntry.thumbUpCount)
+                
+                // IMAGE
+                var image: UIImage?
+                if let imageNamed = loadedEntry.preferedImageTheme {
+                    image = UIImage(named: imageNamed)
+                }
+                else {
+                    if let imagesNamed = Idea.getThemeImageNamesFor(loadedEntry.theme) {
+                        let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
+                        image = UIImage(named: imagesNamed[randomIndex])
+                    }
+                }
+                
+                ideaThemedImageView?.image = image
+                ideaThemedImageView?.contentMode = .ScaleAspectFill
+                
+                if let image = ideaThemedImageView?.image {
+                    let heightOffset = image.size.height / 2.0
+                    scrollViewForImageView?.contentSize = image.size
+                    scrollViewForImageView?.contentOffset = CGPoint(x: 0.0, y: heightOffset)
+                }
             }
         }
     }
@@ -130,6 +134,24 @@ class EntryViewController: UIViewController {
     func unlockThumbUpCountButton() {
         thumbUpCountButton?.enabled = true
         thumbUpCountButton?.fillColor = daveoGreenColor
+    }
+    
+    @IBAction func authorButtonTouchUpInside(sender: AnyObject) {
+//        struct StaticHolder {
+//            static var authorShowed: Bool = true
+//        }
+//        
+        //        if let loadedEntry = entry {
+        //            if StaticHolder.authorShowed {
+        //                showEmailDetail(loadedEntry.authorEmail)
+        //                StaticHolder.authorShowed = false
+        //            }
+        //            else {
+        //                showAuthorDetail(loadedEntry.authorName)
+        //                StaticHolder.authorShowed = true
+        //            }
+        //        }
+        
     }
     
     // showManageEntryView
@@ -161,6 +183,14 @@ class EntryViewController: UIViewController {
         performSegueWithIdentifier("showManageEntryView", sender: nil)
     }
     
+    @IBAction func showEmailTapGesture(sender: AnyObject) {
+        if let loadedEntry = entry {
+            let alertController = UIAlertController(title: "E-mail", message: loadedEntry.authorEmail, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func addIdeaViewHandleTap(sender: UITapGestureRecognizer) {
         performSegueWithIdentifier("entryViewControllerDismissed", sender: nil)
     }
@@ -171,7 +201,7 @@ class EntryViewController: UIViewController {
                 aevc.entry = entry!
             }
         }
-        else if segue.identifier == "entryViewControllerDismissed" {
+        else if segue.identifier == "showManageEntryView" {
             if let metvc = segue.destinationViewController as? ManageEntryTableViewController {
                 metvc.entry = entry!
             }
@@ -183,8 +213,8 @@ class EntryViewController: UIViewController {
         return String(format: "PUBLIÉ LE: %@", creationDate.description)
     }
     
-    func makeThumbUpCountLabelText(possibleThumbUpCount:Int?) -> String {
-        if let thumbUpCount = possibleThumbUpCount {
+    func makeThumbUpCountLabelText(thumbUpCount:Int) -> String {
+        if thumbUpCount > 0 {
             return String(format: "%dx vote%@", thumbUpCount, (thumbUpCount > 1 ? "s" : ""))
         }
         return String(format: "Pas de votes")

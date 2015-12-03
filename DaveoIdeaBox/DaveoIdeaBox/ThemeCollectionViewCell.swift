@@ -24,13 +24,13 @@ class ThemeCollectionViewCell: UICollectionViewCell {
         if let loadedThemeDefinition = themeDefinition {
             themeNameLabel?.text = loadedThemeDefinition.printableName
             
-            let imagesNamed = Idea().getThemeImageNamesFor(loadedThemeDefinition.id.hashValue) // should be optionnal
-            let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
-            let image = UIImage(named: imagesNamed[randomIndex])
-            
-            themeImageView?.image = image
-            themeImageView?.contentMode = .ScaleAspectFill
+            if let imagesNamed = Idea.getThemeImageNamesFor(loadedThemeDefinition.id.hashValue) {
+                let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
+                let image = UIImage(named: imagesNamed[randomIndex])
+                
+                themeImageView?.image = image
+                themeImageView?.contentMode = .ScaleAspectFill
+            }
         }
-        
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Structures+Globals.swift
+//  Globals.swift
 //  DaveoIdeaBox
 //
 //  Created by Steeve is working on 01/12/15.
@@ -25,6 +25,15 @@ struct TimeIntervals {
     }
 }
 
-// MARK: - Globals
+struct Constants {
+    static let entryCollectionSerializedFileName: String = "entries.json"
+}
+
+// MARK: -  Properties
 let daveoGreenColor = UIColor(red: 0, green: 0.501961, blue: 0, alpha: 1)
 let daveoBlueColor = UIColor(red: 0, green: 0.490196, blue: 0.713726, alpha: 1)
+
+// MARK: -  Enumarations
+enum Direction {
+    case Left, Right
+}

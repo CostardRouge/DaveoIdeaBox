@@ -104,6 +104,15 @@ class EntriesCollectionViewController: UICollectionViewController {
         // Configure the cell
         let entry = entryForIndexPath(indexPath)
         cell.entry = entry
+        
+        switch indexPath.item {
+        case 0:
+            //cell.contentLabel.font = UIFont(name: "Avenir", size: 52)
+            cell.contentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
+        default:
+            cell.contentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        }
+        
         return cell
     }
     
@@ -125,10 +134,7 @@ class EntriesCollectionViewController: UICollectionViewController {
         return defaultSize
     }
     
-    //3
-    func collectionView(collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
             return sectionInsets
     }
 

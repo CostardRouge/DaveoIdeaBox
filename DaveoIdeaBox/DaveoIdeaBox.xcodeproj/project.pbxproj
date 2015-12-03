@@ -22,15 +22,15 @@
 		2476E30F1BF8180100C4CFA2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E30D1BF8180100C4CFA2 /* RoundedButton.swift */; };
 		2476E3121BF8182600C4CFA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2476E3111BF8182600C4CFA2 /* Main.storyboard */; };
 		2476E3141BF8183400C4CFA2 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3131BF8183400C4CFA2 /* Idea.swift */; };
-		2476E31D1BF8183C00C4CFA2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */; };
-		2476E31E1BF8183C00C4CFA2 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */; };
+		2476E31D1BF8183C00C4CFA2 /* EntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3151BF8183C00C4CFA2 /* EntryCollectionViewCell.swift */; };
+		2476E31E1BF8183C00C4CFA2 /* EntriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3161BF8183C00C4CFA2 /* EntriesCollectionViewController.swift */; };
 		2476E31F1BF8183C00C4CFA2 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */; };
 		2476E3201BF8183C00C4CFA2 /* EmbbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */; };
 		2476E3211BF8183C00C4CFA2 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E3191BF8183C00C4CFA2 /* AddEntryViewController.swift */; };
 		2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */; };
 		2476E3231BF8183C00C4CFA2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */; };
 		2476E3241BF8183C00C4CFA2 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E31C1BF8183C00C4CFA2 /* FaceView.swift */; };
-		24B42E411C0DACA600DF6524 /* Structures+Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B42E401C0DACA600DF6524 /* Structures+Globals.swift */; };
+		24B42E411C0DACA600DF6524 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B42E401C0DACA600DF6524 /* Globals.swift */; };
 		24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */; };
 		24D95B811BFA597C00E18661 /* AddEntryExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,15 +53,15 @@
 		2476E30D1BF8180100C4CFA2 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2476E3111BF8182600C4CFA2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2476E3131BF8183400C4CFA2 /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
-		2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		2476E3151BF8183C00C4CFA2 /* EntryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCollectionViewCell.swift; sourceTree = "<group>"; };
+		2476E3161BF8183C00C4CFA2 /* EntriesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesCollectionViewController.swift; sourceTree = "<group>"; };
 		2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbbedViewController.swift; sourceTree = "<group>"; };
 		2476E3191BF8183C00C4CFA2 /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		2476E31C1BF8183C00C4CFA2 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
-		24B42E401C0DACA600DF6524 /* Structures+Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Structures+Globals.swift"; sourceTree = "<group>"; };
+		24B42E401C0DACA600DF6524 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		24D95B7E1BFA194A00E18661 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 		24D95B801BFA597C00E18661 /* AddEntryExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryExtraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,9 +92,8 @@
 			children = (
 				2455165A1C0DEA52000746F5 /* ManageEntriesTableViewController.swift */,
 				2428F43B1C0DB48200D7CB30 /* ManageEntryTableViewController.swift */,
-				2476E3151BF8183C00C4CFA2 /* CollectionViewCell.swift */,
-				246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */,
-				2476E3161BF8183C00C4CFA2 /* CollectionViewController.swift */,
+				2476E3151BF8183C00C4CFA2 /* EntryCollectionViewCell.swift */,
+				2476E3161BF8183C00C4CFA2 /* EntriesCollectionViewController.swift */,
 				2476E3171BF8183C00C4CFA2 /* EntryViewController.swift */,
 				2476E3181BF8183C00C4CFA2 /* EmbbedViewController.swift */,
 				2476E3191BF8183C00C4CFA2 /* AddEntryViewController.swift */,
@@ -102,6 +101,7 @@
 				2422DAF31BF929BD00C0DFF9 /* SubmitCompletedViewController.swift */,
 				24333A7C1BFF2A6400FB9FCE /* ScreenSaverViewController.swift */,
 				2476E31A1BF8183C00C4CFA2 /* NavigationViewController.swift */,
+				246652021C0C6CA90046C26C /* ThemeCollectionViewCell.swift */,
 				2476E31B1BF8183C00C4CFA2 /* LaunchViewController.swift */,
 			);
 			name = Views;
@@ -154,7 +154,7 @@
 			children = (
 				2476E3131BF8183400C4CFA2 /* Idea.swift */,
 				2422DAEB1BF8B8C000C0DFF9 /* EntryManager.swift */,
-				24B42E401C0DACA600DF6524 /* Structures+Globals.swift */,
+				24B42E401C0DACA600DF6524 /* Globals.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -234,15 +234,15 @@
 				2422DAF01BF8F44D00C0DFF9 /* Array+Serializable.swift in Sources */,
 				24D95B7F1BFA194A00E18661 /* UIImageEffects.swift in Sources */,
 				246652051C0CA71D0046C26C /* NSDate+Comparison.swift in Sources */,
-				2476E31E1BF8183C00C4CFA2 /* CollectionViewController.swift in Sources */,
+				2476E31E1BF8183C00C4CFA2 /* EntriesCollectionViewController.swift in Sources */,
 				2455165B1C0DEA52000746F5 /* ManageEntriesTableViewController.swift in Sources */,
-				2476E31D1BF8183C00C4CFA2 /* CollectionViewCell.swift in Sources */,
+				2476E31D1BF8183C00C4CFA2 /* EntryCollectionViewCell.swift in Sources */,
 				2476E3141BF8183400C4CFA2 /* Idea.swift in Sources */,
 				2476E3201BF8183C00C4CFA2 /* EmbbedViewController.swift in Sources */,
 				2476E31F1BF8183C00C4CFA2 /* EntryViewController.swift in Sources */,
 				2476E30B1BF817D800C4CFA2 /* AppDelegate.swift in Sources */,
 				2476E3211BF8183C00C4CFA2 /* AddEntryViewController.swift in Sources */,
-				24B42E411C0DACA600DF6524 /* Structures+Globals.swift in Sources */,
+				24B42E411C0DACA600DF6524 /* Globals.swift in Sources */,
 				2476E30F1BF8180100C4CFA2 /* RoundedButton.swift in Sources */,
 				2476E3231BF8183C00C4CFA2 /* LaunchViewController.swift in Sources */,
 				2476E3221BF8183C00C4CFA2 /* NavigationViewController.swift in Sources */,

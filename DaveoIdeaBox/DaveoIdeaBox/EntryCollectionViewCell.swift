@@ -50,7 +50,8 @@ class EntryCollectionViewCell: UICollectionViewCell {
             let nextAllowedVoteDate = loadedEntry.lastVoteDate.dateByAddingTimeInterval(TimeIntervals.nextAllowedVoteAfter)
             let nowDateTimeIntervalSince1970 = NSDate().timeIntervalSince1970
             if nextAllowedVoteDate.timeIntervalSince1970 < nowDateTimeIntervalSince1970 {
-                unlockThumbUpCountButton()            }
+                unlockThumbUpCountButton()
+            }
             else {
                 lockThumbUpCountButton()
                 let timeForNextAllowedVote = nextAllowedVoteDate.timeIntervalSince1970 - nowDateTimeIntervalSince1970 as Double
@@ -67,12 +68,13 @@ class EntryCollectionViewCell: UICollectionViewCell {
                 image = UIImage(named: imageNamed)
             }
             else {
-                let imagesNamed = Idea.getThemeImageNamesFor(loadedEntry.theme) // should be optionnal
-                let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
-                image = UIImage(named: imagesNamed[randomIndex])
+                if let imagesNamed = Idea.getThemeImageNamesFor(loadedEntry.theme) {
+                    let randomIndex = Int(arc4random_uniform(UInt32(imagesNamed.count)))
+                    image = UIImage(named: imagesNamed[randomIndex])
+                }
             }
             
-            image = image?.applyBlurWithRadius(CGFloat(1), tintColor: nil, saturationDeltaFactor: 1.0)
+            //image = image?.applyBlurWithRadius(CGFloat(1), tintColor: nil, saturationDeltaFactor: 1.0)
        
             ideaThemedImageView?.image = image
             ideaThemedImageView?.contentMode = .ScaleAspectFill

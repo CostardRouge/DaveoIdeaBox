@@ -8,19 +8,11 @@
 
 import Foundation
 
-enum Direction {
-    case Left, Right
-}
-
 class EntryManager {
     // MARK: - Attributes
     private var entries = [Idea]()
     
     static let sharedInstance = EntryManager()
-    
-    private struct Constants {
-        static let entryCollectionSerilazedFileName: String = "entries.json"
-    }
     
     init() {
         loadEntries()
@@ -47,8 +39,7 @@ class EntryManager {
             var arrayIndex = arc4random_uniform(UInt32(authors.count))
             let randomAuthorName = authors[Int(arrayIndex)]
             item.authorName = randomAuthorName
-            
-            item.authorEmail = String(format: "%@@daveo.fr", randomAuthorName)
+            item.authorEmail = "\(randomAuthorName)@daveo.fr"
             
             arrayIndex = arc4random_uniform(UInt32(contents.count))
             let randomContent = contents[Int(arrayIndex)]
@@ -123,7 +114,7 @@ class EntryManager {
             }
         }
         
-        // We could persist the date at the application terminating
+        // We could persist the data at the application terminating: DID
         return persistEntries()
     }
     
@@ -136,7 +127,7 @@ class EntryManager {
         if let data = entries.toJson(true) {
             if let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first as String? {
                 let documentsURL = NSURL(fileURLWithPath: documentsPath)
-                let fileURL = documentsURL.URLByAppendingPathComponent(Constants.entryCollectionSerilazedFileName)
+                let fileURL = documentsURL.URLByAppendingPathComponent(Constants.entryCollectionSerializedFileName)
                 data.writeToURL(fileURL, atomically: true)
             }
         }
@@ -146,7 +137,7 @@ class EntryManager {
     func loadEntries() -> Bool {
         if let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first as String? {
             let documentsURL = NSURL(fileURLWithPath: documentsPath)
-            let fileURL = documentsURL.URLByAppendingPathComponent(Constants.entryCollectionSerilazedFileName)
+            let fileURL = documentsURL.URLByAppendingPathComponent(Constants.entryCollectionSerializedFileName)
             
             if let jsonData = NSData(contentsOfURL: fileURL) {
                 //print(jsonData)

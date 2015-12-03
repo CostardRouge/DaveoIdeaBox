@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "EntryThemeChoice"
 
-class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate {
 
     // Outlets
     @IBOutlet weak var entryMoodFaceView: FaceView!
@@ -122,7 +122,7 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
             
             if issue {
                 let alert = UIAlertController(title: "Allô Houston ?!", message: "Il manque quelque chose", preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "Oops, c'est de ma faute", style: UIAlertActionStyle.Default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Oops, c'est de ma faute", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
@@ -166,23 +166,6 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
         }
     }
     
-    //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row].printableName
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("selecting")
-    }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
     //MARK: DataSources
     func smilinessForFaceView(sender: FaceView) -> Double? {
         return Double(happiness - 50) / 50
@@ -221,9 +204,13 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIPicke
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) {
+        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) as? ThemeCollectionViewCell {
             cell.layer.borderColor = UIColor.blueColor().CGColor
             cell.layer.borderWidth = 4.0
+            
+            if let oldColor = cell.themeNameLabel.backgroundColor {
+                cell.themeNameLabel?.backgroundColor = oldColor.colorWithAlphaComponent(0.9)
+            }
         }
     }
     
