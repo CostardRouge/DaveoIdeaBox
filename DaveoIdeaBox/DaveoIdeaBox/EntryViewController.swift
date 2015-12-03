@@ -136,26 +136,6 @@ class EntryViewController: UIViewController {
         thumbUpCountButton?.fillColor = daveoGreenColor
     }
     
-    @IBAction func authorButtonTouchUpInside(sender: AnyObject) {
-//        struct StaticHolder {
-//            static var authorShowed: Bool = true
-//        }
-//        
-        //        if let loadedEntry = entry {
-        //            if StaticHolder.authorShowed {
-        //                showEmailDetail(loadedEntry.authorEmail)
-        //                StaticHolder.authorShowed = false
-        //            }
-        //            else {
-        //                showAuthorDetail(loadedEntry.authorName)
-        //                StaticHolder.authorShowed = true
-        //            }
-        //        }
-        
-    }
-    
-    // showManageEntryView
-    
     @IBAction func deleteEntryButtonTouchUpInside(sender: AnyObject) {
         print("deleteEntryButtonTouchUpInside")
         

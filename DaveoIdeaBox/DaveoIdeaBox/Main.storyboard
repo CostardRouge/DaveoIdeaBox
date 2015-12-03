@@ -136,7 +136,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="authorButtonTouchUpInside:" destination="5O5-ga-I3F" eventType="touchUpInside" id="rcD-Sb-GGJ"/>
                                     <outletCollection property="gestureRecognizers" destination="lUu-wY-2gp" appends="YES" id="Ubt-yM-Tvq"/>
                                 </connections>
                             </button>
@@ -452,7 +451,6 @@
                     </view>
                     <connections>
                         <outlet property="authorButton" destination="hnD-YK-lOC" id="KKM-E8-W8d"/>
-                        <outlet property="authorLabel" destination="10e-DL-GZ0" id="u4f-Ic-Sfz"/>
                         <outlet property="contentTextView" destination="EIA-nb-pAJ" id="tDC-uY-y5s"/>
                         <outlet property="deleteEntryButton" destination="OIq-Mb-hgn" id="A7p-Eg-T39"/>
                         <outlet property="ideaThemedImageView" destination="hgw-S2-8iD" id="7uL-l3-Re3"/>
@@ -1702,12 +1700,11 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projet d'innovation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwb-qS-eKM" userLabel="themeName">
                                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                             <animations/>
-                                                                            <color key="backgroundColor" red="0.090196078431372548" green="0.15294117647058825" blue="0.2196078431372549" alpha="0.35499778368794327" colorSpace="calibratedRGB"/>
+                                                                            <color key="backgroundColor" red="0.090196078431372548" green="0.15294117647058825" blue="0.2196078431372549" alpha="0.35386631817070191" colorSpace="calibratedRGB"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
-                                                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <size key="shadowOffset" width="1" height="-1"/>
+                                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
                                                                         </label>
                                                                     </subviews>
                                                                     <animations/>

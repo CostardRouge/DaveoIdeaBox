@@ -185,8 +185,7 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIColle
         // Configure the cell
         let themeDefinition = themeDefinitionForIndexPath(indexPath)
         cell.themeDefinition = themeDefinition
-        //cell.tag = themeDefinition.id.hashValue
-        
+        configureThemeCell(cell)
         return cell
     }
     
@@ -205,6 +204,18 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIColle
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) as? ThemeCollectionViewCell {
+            configureThemeCell(cell)
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) as? ThemeCollectionViewCell {
+           configureThemeCell(cell)
+        }
+    }
+    
+    func configureThemeCell(cell: ThemeCollectionViewCell) {
+        if cell.selected {
             cell.layer.borderColor = UIColor.blueColor().CGColor
             cell.layer.borderWidth = 4.0
             
@@ -212,11 +223,12 @@ class AddEntryExtraViewController: UIViewController, FaceViewDataSource, UIColle
                 cell.themeNameLabel?.backgroundColor = oldColor.colorWithAlphaComponent(0.9)
             }
         }
-    }
-    
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        if let cell = themesCollectionView.cellForItemAtIndexPath(indexPath) {
+        else {
             cell.layer.borderWidth = 0.0
+            
+            if let oldColor = cell.themeNameLabel.backgroundColor {
+                cell.themeNameLabel?.backgroundColor = oldColor.colorWithAlphaComponent(0.3)
+            }
         }
     }
 }
